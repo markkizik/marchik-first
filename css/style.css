@@ -3,7 +3,7 @@
 @import './keyframes.css';
 
 body {
-    background: linear-gradient(#5f5f5f, #131313) fixed;
+    background: linear-gradient(#bb0000, #a18400) fixed;
     margin: 0;
 
     width: 100vw;
@@ -14,7 +14,6 @@ body {
 
 .main {
     display: flex;
-    flex-direction: column;
 
     justify-content: center;
     align-items: center;
@@ -22,123 +21,113 @@ body {
     min-height: 100%;
 }
 
-.cards {
-    --figma-color-1: #f15025;
-    --figma-color-2: #f47265;
-    --figma-color-3: #8062aa;
-    --figma-color-4: #46b9eb;
-    --figma-color-5: #48ba7f;
-
-    --figma-elm-size: 30px;
-
+.key-strand {
     display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(33, 33, 33);
+
+    padding-bottom: 25px;
+
+    width: 53rem;
+    height: 20rem;
+
+    border-radius: 10px;
+    border: 3px solid #111111;
+}
+
+.company {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    margin-bottom: 20px;
+    color: #c0c0c0;
+
+    border-bottom: 2px solid #464646;
+
+    animation: company1 7s ease infinite;
+}
+
+.glav-keyboard {
+    /* background-color: rgb(168, 168, 168); */
+
+    max-width: 50rem;
+    max-height: 17rem;
+
+    color: rgb(221, 221, 221);
+
+    /* border-radius: 10px; */
+    /* border-top: 3px solid #111111; */
+
+    text-transform: uppercase;
+}
+
+.keyboard-1,
+.keyboard-2,
+.keyboard-3 {
+    display: flex;
 
     justify-content: center;
     align-items: center;
 
-    margin: 50px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 13px;
+
+    gap: 5px;
 }
 
-.figma {
-    display: grid;
-    grid-template: repeat(8, var(--figma-elm-size)) / repeat(8, var(--figma-elm-size));
+.keyboard-2>.keyboard {
+    width: 120px;
+    height: 35px;
 
-    background-color: var(--card-figma-fill, white);
+    justify-content: center;
+    align-items: center;
 }
 
-.figma:nth-child(even) {
-    --card-figma-fill: black;
+.tab,
+.enter {
+    flex: 1 1 200px;
 }
 
-.figma-border {
-    --border-size: 2px;
-    --border-color: rgb(0, 0, 0);
+.caps {
+    flex: 1 1 225px;
 }
 
-.figma-border-white {
-    --border-size: 2px;
-    --border-color: white;
+.shift {
+    flex: 1 1 250px;
 }
 
-.figma-not-fill-color {
-    --figma-color-1: transparent;
-    --figma-color-2: transparent;
-    --figma-color-3: transparent;
-    --figma-color-4: transparent;
-    --figma-color-5: transparent;
+.prob {
+    flex: 1 1 700px;
 }
 
-.figma-elm {
-    grid-area: 3 / 4 / 4 / 5;
+.st {
+    display: flex;
 
-    width: var(--figma-elm-size);
-    height: var(--figma-elm-size);
+    font-size: 15px;
 
-    border-radius: 25px 0 0 25px;
-    border: var(--border-size, 0) solid var(--border-color);
-    box-sizing: border-box;
-    /* box-shadow: inset 0 0 0 var(--border-size, 0) var(--border-color); */
-
-    background: var(--figma-color-1);
-
-    translate: 0% 50%;
+    flex-direction: column;
+    align-items: center;
+    flex: 0.1;
 }
 
-.figma-elm:nth-child(2) {
-    grid-area: 3 / 5 / 4 / 7;
-
-    border-radius: 0 25px 25px 0;
-    background: var(--figma-color-2);
+.st:nth-child(2) {
+    margin-top: 3px;
 }
 
-.figma-elm:nth-child(3) {
-    grid-area: 4 / 4 / 5 / 5;
+.keyboard {
+    display: flex;
 
-    border-radius: 25px 0 0 25px;
-    background: var(--figma-color-3);
-}
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
 
-.figma-elm:nth-child(4) {
-    grid-area: 4 / 5 / 5 / 7;
-
-    border-radius: 50%;
-    background: var(--figma-color-4);
-}
-
-.figma-elm:last-child {
-    grid-area: 5 / 4 / 6 / 5;
-
-    border-radius: 25px 0 25px 25px;
-    background: var(--figma-color-5);
-}
-
-.figma:nth-child(odd) {
-    transition: background-color 1s ease;
-    transition: transform 1s ease-in-out;
-}
-
-.figma:nth-child(odd):hover {
-    cursor: pointer;
-    background-color: rgb(194, 194, 194);
-    transform: scale(1.2);
-}
-
-.animation-1 {
-    animation: figmanim 10s ease-in-out infinite;
-}
-
-.animation-2 {
-    animation: figmaanim-2 3s cubic-bezier(.24,.63,.81,.43) infinite;
-    animation-delay: 7s;
-}
-
-.animation-3:last-of-type {
-    animation: figmaanim-3 3s cubic-bezier(.24,.63,.81,.43) infinite;
-}
-
-.animation-3:last-of-type:hover {
-    cursor: pointer;
-    animation-play-state: paused;
+    background-color: #5f5f5f;
+    border-radius: 3px;
+    width: 60px;
+    height: 25px;
 }
