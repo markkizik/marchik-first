@@ -3,7 +3,7 @@
 @import './keyframes.css';
 
 body {
-    background: linear-gradient(#bb0000, #a18400) fixed;
+    background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
     margin: 0;
 
     width: 100vw;
@@ -17,6 +17,9 @@ body {
 
     justify-content: center;
     align-items: center;
+
+    flex-direction: column;
+    gap: 10px;
 
     min-height: 100%;
 }
@@ -36,6 +39,36 @@ body {
     border-radius: 10px;
     border: 3px solid #111111;
 }
+
+/* Стиль для второй клавы */
+
+.strand2 {
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+
+    animation: border1 10s ease infinite;
+}
+
+.style2>.keyboard {
+    background-color: rgba(245, 245, 245, 0.6);
+
+    color: rgb(0, 0, 0);
+}
+
+/* -------------- */
+
+/* Стиль для третьей клавы */
+
+.strand3 {
+    background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
+}
+
+.style3>.keyboard {
+    background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+
+    color: rgb(255, 255, 255);
+}
+
+/* -------------- */
 
 .company {
     display: flex;
@@ -130,6 +163,8 @@ body {
     border-radius: 3px;
     width: 60px;
     height: 25px;
+
+    position: relative;
 }
 
 button {
@@ -137,4 +172,318 @@ button {
     border: none;
     font: inherit;
     color: inherit;
+}
+
+.datakey1::before,
+.datakey1::after {
+    content: attr(data-key-1);
+
+    inset: -6px auto auto -6px;
+    position: relative;
+}
+
+.datakey1::after {
+    content: attr(data-key-2);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyw::before,
+.datakeyw::after {
+    content: attr(data-key-w);
+
+    inset: -6px auto auto -6px;
+    position: relative;
+}
+
+.datakeyw::after {
+    content: attr(data-key-w1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeye::before, .datakeye::after {
+    content: attr(data-key-e);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeye::after {
+    content: attr(data-key-e1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyr::before, .datakeyr::after {
+    content: attr(data-key-r);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeyr::after {
+    content: attr(data-key-r1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyt::before, .datakeyt::after {
+    content: attr(data-key-t);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeyt::after {
+    content: attr(data-key-t1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyy::before, .datakeyy::after {
+    content: attr(data-key-y);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeyy::after {
+    content: attr(data-key-y1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyu::before, .datakeyu::after {
+    content: attr(data-key-u);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeyu::after {
+    content: attr(data-key-u1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyi::before, .datakeyi::after {
+    content: attr(data-key-i);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeyi::after {
+    content: attr(data-key-i1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyo::before, .datakeyo::after {
+    content: attr(data-key-o);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeyo::after {
+    content: attr(data-key-o1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyp::before, .datakeyp::after {
+    content: attr(data-key-p);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeyp::after {
+    content: attr(data-key-p1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeya::before, .datakeya::after {
+    content: attr(data-key-a);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeya::after {
+    content: attr(data-key-a1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeys::before, .datakeys::after {
+    content: attr(data-key-s);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeys::after {
+    content: attr(data-key-s1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyd::before, .datakeyd::after {
+    content: attr(data-key-d);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeyd::after {
+    content: attr(data-key-d1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyf::before, .datakeyf::after {
+    content: attr(data-key-f);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeyf::after {
+    content: attr(data-key-f1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyg::before, .datakeyg::after {
+    content: attr(data-key-g);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeyg::after {
+    content: attr(data-key-g1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyh::before, .datakeyh::after {
+    content: attr(data-key-h);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeyh::after {
+    content: attr(data-key-h1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyj::before, .datakeyj::after {
+    content: attr(data-key-j);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeyj::after {
+    content: attr(data-key-j1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyk::before, .datakeyk::after {
+    content: attr(data-key-k);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeyk::after {
+    content: attr(data-key-k1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyl::before, .datakeyl::after {
+    content: attr(data-key-l);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeyl::after {
+    content: attr(data-key-l1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyz::before, .datakeyz::after {
+    content: attr(data-key-z);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeyz::after {
+    content: attr(data-key-z1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyx::before, .datakeyx::after {
+    content: attr(data-key-x);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeyx::after {
+    content: attr(data-key-x1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyc::before, .datakeyc::after {
+    content: attr(data-key-c);
+
+    position: relative;
+    inset: -6px auto auto -6px;
+}
+
+.datakeyc::after {
+    content: attr(data-key-c1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyv::before, .datakeyv::after {
+    content: attr(data-key-v);
+    inset: -6px auto auto -6px;
+
+    position: relative;
+}
+
+.datakeyv::after {
+    content: attr(data-key-v1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyb::before, .datakeyb::after {
+    content: attr(data-key-b);
+    inset: -6px auto auto -6px;
+
+    position: relative;
+}
+
+.datakeyb::after {
+    content: attr(data-key-b1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeyn::before, .datakeyn::after {
+    content: attr(data-key-n);
+    inset: -6px auto auto -6px;
+
+    position: relative;
+}
+
+.datakeyn::after {
+    content: attr(data-key-n1);
+    inset: 6px auto auto 6px;
+}
+
+.datakeym::before, .datakeym::after {
+    content: attr(data-key-m);
+    inset: -6px auto auto -6px;
+
+    position: relative;
+}
+
+.datakeym::after {
+    content: attr(data-key-m1);
+    inset: 6px auto auto 6px;
 }

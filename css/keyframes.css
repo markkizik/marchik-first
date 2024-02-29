@@ -12,3 +12,21 @@
     color: #c0c0c0;
     }
 }
+
+@keyframes border1 {
+    0% {
+        border-color: red;
+    }
+    25% {
+        border-color: rgb(0, 47, 255);
+    }
+    50% {
+        border-color: rgb(229, 255, 0);  
+    }
+    75% {
+        border-color: rgb(255, 0, 149);  
+    }
+    100% {
+        border-color: red; 
+    }
+}
