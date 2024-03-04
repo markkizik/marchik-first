@@ -1,0 +1,8 @@
+@keyframes scalelogo {
+    from {
+        scale: 0;
+    }
+    to {
+        scale: 1;
+    }
+}
