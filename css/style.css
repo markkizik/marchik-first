@@ -7,33 +7,36 @@ body {
     margin: 0;
 
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
 
     font-family: 'Quicksand';
-    overflow: hidden;
 }
 
 /* ------------------- */
 
-.display__keyboard {
-    display: none;
-}
-
-.cont_keyboard:target {
-    display: block;
-}
-
-.tabs__items {
+.tabs {
     display: flex;
+    gap: 10px;
+
+    padding: 24px;
+
 }
 
-.tabs__item {
+.tabs a {
     display: flex;
     justify-content: center;
     flex: 1;
 
+    padding: 8px 20px;
+
     text-decoration: none;
     color: white;
+
+    background: red;
+}
+
+.tabs a:hover {
+    background: rgb(8, 83, 1);
 }
 
 /* ------------------- */
@@ -57,10 +60,10 @@ body {
 
     background-color: rgb(33, 33, 33);
 
-    padding-bottom: 25px;
+    padding: 10px 10px 25px;
 
-    width: 53rem;
-    height: 20rem;
+    /* width: 53rem; */
+    /* height: 20rem; */
 
     border-radius: 10px;
     border: 3px solid #111111;
@@ -74,7 +77,7 @@ body {
     animation: border1 10s ease infinite;
 }
 
-.style2>.keyboard {
+.style2>.keyboard-key {
     background-color: rgba(245, 245, 245, 0.6);
 
     color: rgb(0, 0, 0);
@@ -88,8 +91,8 @@ body {
     background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
 }
 
-.style3>.keyboard {
-    background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+.style3>.keyboard-key {
+    background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.25) 200%);
 
     color: rgb(255, 255, 255);
 }
@@ -110,11 +113,15 @@ body {
     animation: company1 7s ease infinite;
 }
 
-.glav-keyboard {
+.keyboard {
+    --keyboard-key-width: 60px;
+    --keyboard-key-height: 35px;
+    --keyboard-row-gap: 5px;
+
     /* background-color: rgb(168, 168, 168); */
 
-    max-width: 50rem;
-    max-height: 17rem;
+    /* max-width: 50rem; */
+    min-height: 17rem;
 
     color: rgb(221, 221, 221);
 
@@ -124,9 +131,8 @@ body {
     text-transform: uppercase;
 }
 
-.keyboard-1,
-.keyboard-2,
-.keyboard-3 {
+
+.keyboard-row {
     display: flex;
 
     justify-content: center;
@@ -136,380 +142,110 @@ body {
     font-weight: bold;
     font-size: 13px;
 
-    gap: 5px;
+    gap: var(--keyboard-row-gap);
 }
 
-.keyboard-2>.keyboard {
-    width: 120px;
-    height: 35px;
-
-    justify-content: center;
-    align-items: center;
+.keyboard-row.small {
+    --keyboard-key-height: 25px;
 }
 
 .tab,
 .enter {
-    flex: 1 1 200px;
+    /* flex: 1 1 200px; */
+    flex: 1 1 calc(var(--keyboard-key-width) * 1.5);
 }
 
 .caps {
-    flex: 1 1 225px;
+    /* flex: 1 1 225px; */
+    flex: 1 1 calc(var(--keyboard-key-width) * 1.75);
 }
 
 .shift {
-    flex: 1 1 250px;
+    /* flex: 1 1 250px; */
+    flex: 1 1 calc(var(--keyboard-key-width) * 2);
 }
 
 .prob {
-    flex: 1 1 700px;
+    /* flex: 1 1 700px;*/
+    flex: 1 1 calc(var(--keyboard-key-width) * 5);
 }
 
-.st {
-    display: flex;
+.keyboard-arrows  {
+    --keyboard-key-height: auto;
+    --keyboard-key-width: 47px;
 
-    font-size: 15px;
+    display: grid;
+    gap: var(--keyboard-row-gap);
 
-    flex-direction: column;
-    align-items: center;
-    flex: 0.1;
+    align-self: stretch;
 }
 
-.st:nth-child(2) {
-    margin-top: 3px;
+.keyboard-arrows .left {
+    grid-area: 2 span / 1;
 }
 
-.keyboard {
+.keyboard-arrows .right {
+    grid-area: 2 span / 3;
+}
+
+.keyboard-arrows .up {
+    grid-area: 1 / 2;
+}
+
+.keyboard-arrows .down {
+    grid-area: 2 / 2;
+}
+
+.keyboard-arrows > .keyboard-key {
+    font-size: 8px;
+}
+
+.keyboard-key {
+    position: relative;
+
     display: flex;
 
     justify-content: center;
     align-items: center;
-    line-height: 1;
 
-    background-color: #5f5f5f;
-    border-radius: 3px;
-    width: 60px;
-    height: 25px;
+    width: var(--keyboard-key-width);
+    height: var(--keyboard-key-height);
 
-    position: relative;
-}
-
-button {
     padding: 0;
-    border: none;
+
     font: inherit;
+    line-height: 1;
     color: inherit;
+
+    border: none;
+    border-radius: 3px;
+    background-color: #5f5f5f;
 }
 
-.datakey1::before,
-.datakey1::after {
-    content: attr(data-key-1);
-
-    inset: -6px auto auto -6px;
-    position: relative;
+.keyboard-key.left span, .keyboard-key.right span {
+    rotate: -90deg;
 }
 
-.datakey1::after {
-    content: attr(data-key-2);
-    inset: 6px auto auto 6px;
-}
+.keyboard-key:before,
+.keyboard-key:after {
+    --key-offset: -6px;
 
-.datakeyw::before,
-.datakeyw::after {
-    content: attr(data-key-w);
-
-    inset: -6px auto auto -6px;
-    position: relative;
-}
-
-.datakeyw::after {
-    content: attr(data-key-w1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeye::before, .datakeye::after {
-    content: attr(data-key-e);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeye::after {
-    content: attr(data-key-e1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyr::before, .datakeyr::after {
-    content: attr(data-key-r);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeyr::after {
-    content: attr(data-key-r1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyt::before, .datakeyt::after {
-    content: attr(data-key-t);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeyt::after {
-    content: attr(data-key-t1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyy::before, .datakeyy::after {
-    content: attr(data-key-y);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeyy::after {
-    content: attr(data-key-y1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyu::before, .datakeyu::after {
-    content: attr(data-key-u);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeyu::after {
-    content: attr(data-key-u1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyi::before, .datakeyi::after {
-    content: attr(data-key-i);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeyi::after {
-    content: attr(data-key-i1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyo::before, .datakeyo::after {
-    content: attr(data-key-o);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeyo::after {
-    content: attr(data-key-o1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyp::before, .datakeyp::after {
-    content: attr(data-key-p);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeyp::after {
-    content: attr(data-key-p1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeya::before, .datakeya::after {
-    content: attr(data-key-a);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeya::after {
-    content: attr(data-key-a1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeys::before, .datakeys::after {
-    content: attr(data-key-s);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeys::after {
-    content: attr(data-key-s1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyd::before, .datakeyd::after {
-    content: attr(data-key-d);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeyd::after {
-    content: attr(data-key-d1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyf::before, .datakeyf::after {
-    content: attr(data-key-f);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeyf::after {
-    content: attr(data-key-f1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyg::before, .datakeyg::after {
-    content: attr(data-key-g);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeyg::after {
-    content: attr(data-key-g1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyh::before, .datakeyh::after {
-    content: attr(data-key-h);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeyh::after {
-    content: attr(data-key-h1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyj::before, .datakeyj::after {
-    content: attr(data-key-j);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeyj::after {
-    content: attr(data-key-j1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyk::before, .datakeyk::after {
-    content: attr(data-key-k);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeyk::after {
-    content: attr(data-key-k1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyl::before, .datakeyl::after {
-    content: attr(data-key-l);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeyl::after {
-    content: attr(data-key-l1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyz::before, .datakeyz::after {
-    content: attr(data-key-z);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeyz::after {
-    content: attr(data-key-z1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyx::before, .datakeyx::after {
-    content: attr(data-key-x);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeyx::after {
-    content: attr(data-key-x1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyc::before, .datakeyc::after {
-    content: attr(data-key-c);
-
-    position: relative;
-    inset: -6px auto auto -6px;
-}
-
-.datakeyc::after {
-    content: attr(data-key-c1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyv::before, .datakeyv::after {
-    content: attr(data-key-v);
-    inset: -6px auto auto -6px;
-
-    position: relative;
-}
-
-.datakeyv::after {
-    content: attr(data-key-v1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeyb::before, .datakeyb::after {
     content: attr(data-key-b);
-    inset: -6px auto auto -6px;
 
     position: relative;
+    inset: var(--key-offset) auto auto var(--key-offset);
 }
 
-.datakeyb::after {
-    content: attr(data-key-b1);
-    inset: 6px auto auto 6px;
+.keyboard-key::after {
+    --key-offset: 6px;
+
+    content: attr(data-key-a);
 }
 
-.datakeyn::before, .datakeyn::after {
-    content: attr(data-key-n);
-    inset: -6px auto auto -6px;
-
-    position: relative;
+.tab-keyboard {
+    display: none;
 }
 
-.datakeyn::after {
-    content: attr(data-key-n1);
-    inset: 6px auto auto 6px;
-}
-
-.datakeym::before, .datakeym::after {
-    content: attr(data-key-m);
-    inset: -6px auto auto -6px;
-
-    position: relative;
-}
-
-.datakeym::after {
-    content: attr(data-key-m1);
-    inset: 6px auto auto 6px;
+.tab-keyboard:target {
+    display: flex;
 }
