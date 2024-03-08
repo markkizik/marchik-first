@@ -10,7 +10,33 @@ body {
     height: 100vh;
 
     font-family: 'Quicksand';
+    overflow: hidden;
 }
+
+/* ------------------- */
+
+.display__keyboard {
+    display: none;
+}
+
+.cont_keyboard:target {
+    display: block;
+}
+
+.tabs__items {
+    display: flex;
+}
+
+.tabs__item {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+
+    text-decoration: none;
+    color: white;
+}
+
+/* ------------------- */
 
 .main {
     display: flex;
