@@ -19,7 +19,6 @@ body {
     gap: 10px;
 
     padding: 24px;
-
 }
 
 .tabs a {
@@ -62,42 +61,37 @@ body {
 
     padding: 10px 10px 25px;
 
-    /* width: 53rem; */
-    /* height: 20rem; */
-
     border-radius: 10px;
     border: 3px solid #111111;
 }
 
 /* Стиль для второй клавы */
 
-.strand2 {
+.style-rgb {
     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 
     animation: border1 10s ease infinite;
 }
-
-.style2>.keyboard-key {
+.style-rgb .keyboard-key {
     background-color: rgba(245, 245, 245, 0.6);
 
     color: rgb(0, 0, 0);
 }
 
-/* -------------- */
+/* --------------------------- */
 
 /* Стиль для третьей клавы */
 
-.strand3 {
+.style-blackish {
     background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
 }
-
-.style3>.keyboard-key {
+.style-blackish .keyboard-key {
     background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.25) 200%);
 
     color: rgb(255, 255, 255);
 }
 
-/* -------------- */
+/* --------------------------- */
 
 .company {
     display: flex;
