@@ -22,37 +22,26 @@ body {
     justify-content: center;
 
     flex: 1 1 33.333%;
-    
-    /* max-width: 100%; */
 
     padding: 24px;
     gap: 5px;
-
-    /* background-color: red; */
 
     order: 1;
 }
 
 .tab-panel {
-    display: none;
+    /* display: none; */
     order: 10;
     flex: 1 1 100%;
-    /* margin: 0 50%; */
 }
 
-.tab:has(.tab-actor:checked) + .tab-panel {
+/* .tab:has(.tab-actor:checked) ~ .tab-panel {
     display: block;
-}
+} */
 
-@media screen and (max-width: 480px) {
-    :is(.tab, .tab-panel) {
-        order: initial;
-    }
-
-    .tab {
-        flex-direction: column;
-        /* width: 100%; */
-    }
+.tab:has(#styleRGB:checked) + .tab-panel {
+    background-image: var(--background-image-style-rgb);
+    animation: var(--animation-style-rgb);
 }
 
 /* ------------------- */
@@ -70,6 +59,8 @@ body {
 
 .container {
     display: flex;
+    justify-content: center;
+
     flex-flow: row wrap;
     flex-wrap: wrap;
 
@@ -92,14 +83,18 @@ body {
 /* Стиль для второй клавы */
 
 .style-rgb {
-    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    /* background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    animation: border1 10s ease infinite; */
 
-    animation: border1 10s ease infinite;
+    --background-image-style-rgb: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    --animation-style-rgb: border1 10s ease infinite;
 }
 .style-rgb .keyboard-key {
     background-color: rgba(245, 245, 245, 0.6);
-
     color: rgb(0, 0, 0);
+
+    --background-colorkey-style-rgb: rgba(245, 245, 245, 0.6);
+    --color-key-style-rgb: rgb(0, 0, 0);
 }
 
 /* --------------------------- */
