@@ -33,15 +33,23 @@ body {
     /* display: none; */
     order: 10;
     flex: 1 1 100%;
+    margin: auto;
 }
 
-/* .tab:has(.tab-actor:checked) ~ .tab-panel {
-    display: block;
-} */
 
-.tab:has(#styleRGB:checked) + .tab-panel {
-    background-image: var(--background-image-style-rgb);
-    animation: var(--animation-style-rgb);
+.tab:has(#styleRGB:checked) ~ .tab-panel {
+    --key-strand-fill: black;
+
+    --keyboard-key-color: black;
+    --keyboard-key-fill: white;
+}
+
+.tab:has(#styleLight:checked) ~ .tab-panel {
+    --key-strand-fill: rgb(238, 238, 238);
+
+
+    --keyboard-key-color: black;
+    --keyboard-key-fill: #a0a0a0;
 }
 
 /* ------------------- */
@@ -72,45 +80,12 @@ body {
     justify-content: center;
     align-items: center;
 
-    background-color: rgb(33, 33, 33);
-
     padding: 10px 10px 25px;
 
     border-radius: 10px;
-    border: 3px solid #111111;
+    border: 3px solid #111111, var(--key-strand-border #111111);
+    background-color: var(--key-strand-fill, rgb(33, 33, 33));
 }
-
-/* Стиль для второй клавы */
-
-.style-rgb {
-    /* background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-    animation: border1 10s ease infinite; */
-
-    --background-image-style-rgb: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-    --animation-style-rgb: border1 10s ease infinite;
-}
-.style-rgb .keyboard-key {
-    background-color: rgba(245, 245, 245, 0.6);
-    color: rgb(0, 0, 0);
-
-    --background-colorkey-style-rgb: rgba(245, 245, 245, 0.6);
-    --color-key-style-rgb: rgb(0, 0, 0);
-}
-
-/* --------------------------- */
-
-/* Стиль для третьей клавы */
-
-.style-blackish {
-    background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
-}
-.style-blackish .keyboard-key {
-    background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.25) 200%);
-
-    color: rgb(255, 255, 255);
-}
-
-/* --------------------------- */
 
 .company {
     display: flex;
@@ -232,7 +207,8 @@ body {
 
     border: none;
     border-radius: 3px;
-    background-color: #5f5f5f;
+    color: var(--keyboard-key-color, white);
+    background-color: var(--keyboard-key-fill, #5f5f5f);
 }
 
 .keyboard-key.left span, .keyboard-key.right span {
