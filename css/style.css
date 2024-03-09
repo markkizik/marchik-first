@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 @import './keyframes.css';
+@import './tabs.css';
 
 body {
     background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
@@ -14,24 +15,29 @@ body {
 
 /* --------- ttttttsabsssssss ---------- */
 
-.tabs {
+.tab {
     display: flex;
     flex-wrap: wrap;
-    max-width: 100%;
 
-    gap: 10px;
+    justify-content: center;
+
+    flex: 1 1 33.333%;
+    
+    /* max-width: 100%; */
+
     padding: 24px;
-}
+    gap: 5px;
 
-.tab {
+    /* background-color: red; */
+
     order: 1;
 }
 
 .tab-panel {
     display: none;
     order: 10;
-    min-width: 100%;
-    flex: 1;
+    flex: 1 1 100%;
+    /* margin: 0 50%; */
 }
 
 .tab:has(.tab-actor:checked) + .tab-panel {
@@ -43,12 +49,9 @@ body {
         order: initial;
     }
 
-    .tabs {
-        flex-direction: column;
-    }
-
     .tab {
-        width: 100%;
+        flex-direction: column;
+        /* width: 100%; */
     }
 }
 
@@ -60,10 +63,17 @@ body {
     justify-content: center;
     align-items: center;
 
-    flex-direction: column;
     gap: 10px;
-
+    
     min-height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+
+    max-width: 100%;
 }
 
 .key-strand {

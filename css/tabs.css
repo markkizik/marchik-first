@@ -1,0 +1,35 @@
+
+.tab {
+    font-weight: bold;
+}
+
+.tab:has(.tab-actor:checked) {
+    color: white;
+}
+
+.tab:has(.tab-actor:checked)::before {
+    content: '›';
+    color: white;
+}
+.tab:has(.tab-actor:checked)::after {
+    content: '‹';
+    color: white;
+}
+
+@media screen and (max-width: 480px) {
+    .tab {
+        gap: 0;
+    }
+    
+    .tab-panel {
+        display: block;
+        flex-direction: column;
+        flex: 0;
+        overflow-y: auto;
+        transition: 300ms flex;
+    }
+
+    .tab:has(.tab-actor:checked) + .tab-panel {
+        flex: 1;
+    }
+}
