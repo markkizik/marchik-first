@@ -6,124 +6,21 @@
 </head>
 
 <body>
-      <header>
-            <nav class="tabs">
-                  <a href="#tab_01">Клавиатура 1</a>
-                  <a href="#tab_02">Клавиатура 2</a>
-                  <a href="#tab_03">Клавиатура 3</a>
-            </nav>
-      </header>
-
+      <section class="tabs">
+            <label class="tab">
+                  <input type="radio" name="tabs" class="tab-actor" />
+                  KeyBoard 1
+            </label>
+            <label class="tab">
+                  <input type="radio" name="tabs" class="tab-actor actor-2" />
+                  KeyBoard 2
+            </label>
+      
       <main class="main">
-            <div id="tab_01" class="key-strand tab-keyboard">
-                  <div class="keyboard">
-                        <div class="company ">KeyBoards Marky</div>
-                        <div class="keyboard-row small">
-                              <button class="keyboard-key">esc</button>
-                              <button class="keyboard-key">f1</button>
-                              <button class="keyboard-key">f2</button>
-                              <button class="keyboard-key">f3</button>
-                              <button class="keyboard-key">f4</button>
-                              <button class="keyboard-key">f5</button>
-                              <button class="keyboard-key">f6</button>
-                              <button class="keyboard-key">f7</button>
-                              <button class="keyboard-key">f8</button>
-                              <button class="keyboard-key">f9</button>
-                              <button class="keyboard-key">f10</button>
-                              <button class="keyboard-key">f11</button>
-                              <button class="keyboard-key">f12</button>
-                              <button class="keyboard-key">del</button>
-                        </div>
-
-                        <div class="keyboard-row">
-                              <button class="keyboard-key">`</button>
-                              <button class="keyboard-key">1</button>
-                              <button class="keyboard-key">2</button>
-                              <button class="keyboard-key">3</button>
-                              <button class="keyboard-key">4</button>
-                              <button class="keyboard-key">5</button>
-                              <button class="keyboard-key">6</button>
-                              <button class="keyboard-key">7</button>
-                              <button class="keyboard-key">8</button>
-                              <button class="keyboard-key">9</button>
-                              <button class="keyboard-key">0</button>
-                              <button class="keyboard-key">-</button>
-                              <button class="keyboard-key">=</button>
-                              <button class="keyboard-key">⇐</button>
-                        </div>
-
-                        <div class="keyboard-row">
-                              <button class="keyboard-key tab">Tab</button>
-                              <button class="keyboard-key" data-key-b="Q" data-key-a="й"></button>
-                              <button class="keyboard-key" data-key-b="W" data-key-a="ц"></button>
-                              <button class="keyboard-key" data-key-b="E" data-key-a="у"></button>
-                              <button class="keyboard-key" data-key-b="R" data-key-a="к"></button>
-                              <button class="keyboard-key" data-key-b="T" data-key-a="е"></button>
-                              <button class="keyboard-key" data-key-b="Y" data-key-a="н"></button>
-                              <button class="keyboard-key" data-key-b="U" data-key-a="г"></button>
-                              <button class="keyboard-key" data-key-b="I" data-key-a="ш"></button>
-                              <button class="keyboard-key" data-key-b="O" data-key-a="щ"></button>
-                              <button class="keyboard-key" data-key-b="P" data-key-a="з"></button>
-                              <button class="keyboard-key">[</button>
-                              <button class="keyboard-key">]</button>
-                              <button class="keyboard-key">\</button>
-                        </div>
-
-                        <div class="keyboard-row">
-                              <button class="keyboard-key caps">caps</button>
-                              <button class="keyboard-key" data-key-b="A" data-key-a="ф"></button>
-                              <button class="keyboard-key" data-key-b="S" data-key-a="ы"></button>
-                              <button class="keyboard-key" data-key-b="D" data-key-a="в"></button>
-                              <button class="keyboard-key" data-key-b="F" data-key-a="a"></button>
-                              <button class="keyboard-key" data-key-b="G" data-key-a="п"></button>
-                              <button class="keyboard-key" data-key-b="H" data-key-a="р"></button>
-                              <button class="keyboard-key" data-key-b="J" data-key-a="о"></button>
-                              <button class="keyboard-key" data-key-b="K" data-key-a="л"></button>
-                              <button class="keyboard-key" data-key-b="L" data-key-a="д"></button>
-                              <button class="keyboard-key">:</button>
-                              <button class="keyboard-key">'</button>
-                              <button class="keyboard-key enter">Enter</button>
-                        </div>
-
-                        <div class="keyboard-row">
-                              <button class="keyboard-key shift">shift</button>
-                              <button class="keyboard-key" data-key-b="Z" data-key-a="я"></button>
-                              <button class="keyboard-key" data-key-b="X" data-key-a="ч"></button>
-                              <button class="keyboard-key" data-key-b="C" data-key-a="с"></button>
-                              <button class="keyboard-key" data-key-b="V" data-key-a="м"></button>
-                              <button class="keyboard-key" data-key-b="B" data-key-a="и"></button>
-                              <button class="keyboard-key" data-key-b="N" data-key-a="т"></button>
-                              <button class="keyboard-key" data-key-b="M" data-key-a="ь"></button>
-                              <button class="keyboard-key">,</button>
-                              <button class="keyboard-key">.</button>
-                              <button class="keyboard-key">/</button>
-                              <button class="keyboard-key shift">shift</button>
-                        </div>
-
-                        <div class="keyboard-row">
-                              <button class="keyboard-key">ctrl</button>
-                              <button class="keyboard-key">win</button>
-                              <button class="keyboard-key">alt</button>
-                              <button class="keyboard-key prob">—</button>
-                              <button class="keyboard-key">alt</button>
-                              <button class="keyboard-key">fn</button>
-                              <button class="keyboard-key">Ξ</button>
-                              <button class="keyboard-key">ctrl</button>
-
-                              <div class="keyboard-arrows">
-                                    <button class="keyboard-key left"><span>▲</span></button>
-                                    <button class="keyboard-key up"><span>▲</span></button>
-                                    <button class="keyboard-key down"><span>▼</span></button>
-                                    <button class="keyboard-key right"><span>▼</span></button>
-                              </div>
-                        </div>
-                  </div>
-            </div>
-
-            <div id="tab_02" class="cont_keyboard tab-keyboard">
-                  <div class="key-strand style-rgb">
+            <div class="tab-panel">
+                  <div class="key-strand tab-keyboard">
                         <div class="keyboard">
-                              <div class="company">Marky 2.0</div>
+                              <div class="company ">KeyBoards Marky</div>
                               <div class="keyboard-row small">
                                     <button class="keyboard-key">esc</button>
                                     <button class="keyboard-key">f1</button>
@@ -227,114 +124,225 @@
                   </div>
             </div>
 
-            <div id="tab_03" class="cont_keyboard tab-keyboard">
-                  <div class="key-strand style-blackish">
-                        <div class="keyboard">
-                              <div class="company">Marky 3.0</div>
-                              <div class="keyboard-row small">
-                                    <button class="keyboard-key">esc</button>
-                                    <button class="keyboard-key">f1</button>
-                                    <button class="keyboard-key">f2</button>
-                                    <button class="keyboard-key">f3</button>
-                                    <button class="keyboard-key">f4</button>
-                                    <button class="keyboard-key">f5</button>
-                                    <button class="keyboard-key">f6</button>
-                                    <button class="keyboard-key">f7</button>
-                                    <button class="keyboard-key">f8</button>
-                                    <button class="keyboard-key">f9</button>
-                                    <button class="keyboard-key">f10</button>
-                                    <button class="keyboard-key">f11</button>
-                                    <button class="keyboard-key">f12</button>
-                                    <button class="keyboard-key">del</button>
-                              </div>
+            <div class="tab-panel">
+                  <div class="cont_keyboard tab-keyboard">
+                        <div class="key-strand style-rgb">
+                              <div class="keyboard">
+                                    <div class="company">Marky 2.0</div>
+                                    <div class="keyboard-row small">
+                                          <button class="keyboard-key">esc</button>
+                                          <button class="keyboard-key">f1</button>
+                                          <button class="keyboard-key">f2</button>
+                                          <button class="keyboard-key">f3</button>
+                                          <button class="keyboard-key">f4</button>
+                                          <button class="keyboard-key">f5</button>
+                                          <button class="keyboard-key">f6</button>
+                                          <button class="keyboard-key">f7</button>
+                                          <button class="keyboard-key">f8</button>
+                                          <button class="keyboard-key">f9</button>
+                                          <button class="keyboard-key">f10</button>
+                                          <button class="keyboard-key">f11</button>
+                                          <button class="keyboard-key">f12</button>
+                                          <button class="keyboard-key">del</button>
+                                    </div>
 
-                              <div class="keyboard-row">
-                                    <button class="keyboard-key">`</button>
-                                    <button class="keyboard-key">1</button>
-                                    <button class="keyboard-key">2</button>
-                                    <button class="keyboard-key">3</button>
-                                    <button class="keyboard-key">4</button>
-                                    <button class="keyboard-key">5</button>
-                                    <button class="keyboard-key">6</button>
-                                    <button class="keyboard-key">7</button>
-                                    <button class="keyboard-key">8</button>
-                                    <button class="keyboard-key">9</button>
-                                    <button class="keyboard-key">0</button>
-                                    <button class="keyboard-key">-</button>
-                                    <button class="keyboard-key">=</button>
-                                    <button class="keyboard-key">⇐</button>
-                              </div>
+                                    <div class="keyboard-row">
+                                          <button class="keyboard-key">`</button>
+                                          <button class="keyboard-key">1</button>
+                                          <button class="keyboard-key">2</button>
+                                          <button class="keyboard-key">3</button>
+                                          <button class="keyboard-key">4</button>
+                                          <button class="keyboard-key">5</button>
+                                          <button class="keyboard-key">6</button>
+                                          <button class="keyboard-key">7</button>
+                                          <button class="keyboard-key">8</button>
+                                          <button class="keyboard-key">9</button>
+                                          <button class="keyboard-key">0</button>
+                                          <button class="keyboard-key">-</button>
+                                          <button class="keyboard-key">=</button>
+                                          <button class="keyboard-key">⇐</button>
+                                    </div>
 
-                              <div class="keyboard-row">
-                                    <button class="keyboard-key tab">Tab</button>
-                                    <button class="keyboard-key" data-key-b="Q" data-key-a="й"></button>
-                                    <button class="keyboard-key" data-key-b="W" data-key-a="ц"></button>
-                                    <button class="keyboard-key" data-key-b="E" data-key-a="у"></button>
-                                    <button class="keyboard-key" data-key-b="R" data-key-a="к"></button>
-                                    <button class="keyboard-key" data-key-b="T" data-key-a="е"></button>
-                                    <button class="keyboard-key" data-key-b="Y" data-key-a="н"></button>
-                                    <button class="keyboard-key" data-key-b="U" data-key-a="г"></button>
-                                    <button class="keyboard-key" data-key-b="I" data-key-a="ш"></button>
-                                    <button class="keyboard-key" data-key-b="O" data-key-a="щ"></button>
-                                    <button class="keyboard-key" data-key-b="P" data-key-a="з"></button>
-                                    <button class="keyboard-key">[</button>
-                                    <button class="keyboard-key">]</button>
-                                    <button class="keyboard-key">\</button>
-                              </div>
+                                    <div class="keyboard-row">
+                                          <button class="keyboard-key tab">Tab</button>
+                                          <button class="keyboard-key" data-key-b="Q" data-key-a="й"></button>
+                                          <button class="keyboard-key" data-key-b="W" data-key-a="ц"></button>
+                                          <button class="keyboard-key" data-key-b="E" data-key-a="у"></button>
+                                          <button class="keyboard-key" data-key-b="R" data-key-a="к"></button>
+                                          <button class="keyboard-key" data-key-b="T" data-key-a="е"></button>
+                                          <button class="keyboard-key" data-key-b="Y" data-key-a="н"></button>
+                                          <button class="keyboard-key" data-key-b="U" data-key-a="г"></button>
+                                          <button class="keyboard-key" data-key-b="I" data-key-a="ш"></button>
+                                          <button class="keyboard-key" data-key-b="O" data-key-a="щ"></button>
+                                          <button class="keyboard-key" data-key-b="P" data-key-a="з"></button>
+                                          <button class="keyboard-key">[</button>
+                                          <button class="keyboard-key">]</button>
+                                          <button class="keyboard-key">\</button>
+                                    </div>
 
-                              <div class="keyboard-row">
-                                    <button class="keyboard-key caps">caps</button>
-                                    <button class="keyboard-key" data-key-b="A" data-key-a="ф"></button>
-                                    <button class="keyboard-key" data-key-b="S" data-key-a="ы"></button>
-                                    <button class="keyboard-key" data-key-b="D" data-key-a="в"></button>
-                                    <button class="keyboard-key" data-key-b="F" data-key-a="a"></button>
-                                    <button class="keyboard-key" data-key-b="G" data-key-a="п"></button>
-                                    <button class="keyboard-key" data-key-b="H" data-key-a="р"></button>
-                                    <button class="keyboard-key" data-key-b="J" data-key-a="о"></button>
-                                    <button class="keyboard-key" data-key-b="K" data-key-a="л"></button>
-                                    <button class="keyboard-key" data-key-b="L" data-key-a="д"></button>
-                                    <button class="keyboard-key">:</button>
-                                    <button class="keyboard-key">'</button>
-                                    <button class="keyboard-key enter">Enter</button>
-                              </div>
+                                    <div class="keyboard-row">
+                                          <button class="keyboard-key caps">caps</button>
+                                          <button class="keyboard-key" data-key-b="A" data-key-a="ф"></button>
+                                          <button class="keyboard-key" data-key-b="S" data-key-a="ы"></button>
+                                          <button class="keyboard-key" data-key-b="D" data-key-a="в"></button>
+                                          <button class="keyboard-key" data-key-b="F" data-key-a="a"></button>
+                                          <button class="keyboard-key" data-key-b="G" data-key-a="п"></button>
+                                          <button class="keyboard-key" data-key-b="H" data-key-a="р"></button>
+                                          <button class="keyboard-key" data-key-b="J" data-key-a="о"></button>
+                                          <button class="keyboard-key" data-key-b="K" data-key-a="л"></button>
+                                          <button class="keyboard-key" data-key-b="L" data-key-a="д"></button>
+                                          <button class="keyboard-key">:</button>
+                                          <button class="keyboard-key">'</button>
+                                          <button class="keyboard-key enter">Enter</button>
+                                    </div>
 
-                              <div class="keyboard-row">
-                                    <button class="keyboard-key shift">shift</button>
-                                    <button class="keyboard-key" data-key-b="Z" data-key-a="я"></button>
-                                    <button class="keyboard-key" data-key-b="X" data-key-a="ч"></button>
-                                    <button class="keyboard-key" data-key-b="C" data-key-a="с"></button>
-                                    <button class="keyboard-key" data-key-b="V" data-key-a="м"></button>
-                                    <button class="keyboard-key" data-key-b="B" data-key-a="и"></button>
-                                    <button class="keyboard-key" data-key-b="N" data-key-a="т"></button>
-                                    <button class="keyboard-key" data-key-b="M" data-key-a="ь"></button>
-                                    <button class="keyboard-key">,</button>
-                                    <button class="keyboard-key">.</button>
-                                    <button class="keyboard-key">/</button>
-                                    <button class="keyboard-key shift">shift</button>
-                              </div>
+                                    <div class="keyboard-row">
+                                          <button class="keyboard-key shift">shift</button>
+                                          <button class="keyboard-key" data-key-b="Z" data-key-a="я"></button>
+                                          <button class="keyboard-key" data-key-b="X" data-key-a="ч"></button>
+                                          <button class="keyboard-key" data-key-b="C" data-key-a="с"></button>
+                                          <button class="keyboard-key" data-key-b="V" data-key-a="м"></button>
+                                          <button class="keyboard-key" data-key-b="B" data-key-a="и"></button>
+                                          <button class="keyboard-key" data-key-b="N" data-key-a="т"></button>
+                                          <button class="keyboard-key" data-key-b="M" data-key-a="ь"></button>
+                                          <button class="keyboard-key">,</button>
+                                          <button class="keyboard-key">.</button>
+                                          <button class="keyboard-key">/</button>
+                                          <button class="keyboard-key shift">shift</button>
+                                    </div>
 
-                              <div class="keyboard-row">
-                                    <button class="keyboard-key">ctrl</button>
-                                    <button class="keyboard-key">win</button>
-                                    <button class="keyboard-key">alt</button>
-                                    <button class="keyboard-key prob">—</button>
-                                    <button class="keyboard-key">alt</button>
-                                    <button class="keyboard-key">fn</button>
-                                    <button class="keyboard-key">Ξ</button>
-                                    <button class="keyboard-key">ctrl</button>
+                                    <div class="keyboard-row">
+                                          <button class="keyboard-key">ctrl</button>
+                                          <button class="keyboard-key">win</button>
+                                          <button class="keyboard-key">alt</button>
+                                          <button class="keyboard-key prob">—</button>
+                                          <button class="keyboard-key">alt</button>
+                                          <button class="keyboard-key">fn</button>
+                                          <button class="keyboard-key">Ξ</button>
+                                          <button class="keyboard-key">ctrl</button>
 
-                                    <div class="keyboard-arrows">
-                                          <button class="keyboard-key left"><span>▲</span></button>
-                                          <button class="keyboard-key up"><span>▲</span></button>
-                                          <button class="keyboard-key down"><span>▼</span></button>
-                                          <button class="keyboard-key right"><span>▼</span></button>
+                                          <div class="keyboard-arrows">
+                                                <button class="keyboard-key left"><span>▲</span></button>
+                                                <button class="keyboard-key up"><span>▲</span></button>
+                                                <button class="keyboard-key down"><span>▼</span></button>
+                                                <button class="keyboard-key right"><span>▼</span></button>
+                                          </div>
                                     </div>
                               </div>
                         </div>
                   </div>
             </div>
 
+            <div class="tab-panel">
+                  <div class="cont_keyboard tab-keyboard">
+                        <div class="key-strand style-blackish">
+                              <div class="keyboard">
+                                    <div class="company">Marky 3.0</div>
+                                    <div class="keyboard-row small">
+                                          <button class="keyboard-key">esc</button>
+                                          <button class="keyboard-key">f1</button>
+                                          <button class="keyboard-key">f2</button>
+                                          <button class="keyboard-key">f3</button>
+                                          <button class="keyboard-key">f4</button>
+                                          <button class="keyboard-key">f5</button>
+                                          <button class="keyboard-key">f6</button>
+                                          <button class="keyboard-key">f7</button>
+                                          <button class="keyboard-key">f8</button>
+                                          <button class="keyboard-key">f9</button>
+                                          <button class="keyboard-key">f10</button>
+                                          <button class="keyboard-key">f11</button>
+                                          <button class="keyboard-key">f12</button>
+                                          <button class="keyboard-key">del</button>
+                                    </div>
+
+                                    <div class="keyboard-row">
+                                          <button class="keyboard-key">`</button>
+                                          <button class="keyboard-key">1</button>
+                                          <button class="keyboard-key">2</button>
+                                          <button class="keyboard-key">3</button>
+                                          <button class="keyboard-key">4</button>
+                                          <button class="keyboard-key">5</button>
+                                          <button class="keyboard-key">6</button>
+                                          <button class="keyboard-key">7</button>
+                                          <button class="keyboard-key">8</button>
+                                          <button class="keyboard-key">9</button>
+                                          <button class="keyboard-key">0</button>
+                                          <button class="keyboard-key">-</button>
+                                          <button class="keyboard-key">=</button>
+                                          <button class="keyboard-key">⇐</button>
+                                    </div>
+
+                                    <div class="keyboard-row">
+                                          <button class="keyboard-key tab">Tab</button>
+                                          <button class="keyboard-key" data-key-b="Q" data-key-a="й"></button>
+                                          <button class="keyboard-key" data-key-b="W" data-key-a="ц"></button>
+                                          <button class="keyboard-key" data-key-b="E" data-key-a="у"></button>
+                                          <button class="keyboard-key" data-key-b="R" data-key-a="к"></button>
+                                          <button class="keyboard-key" data-key-b="T" data-key-a="е"></button>
+                                          <button class="keyboard-key" data-key-b="Y" data-key-a="н"></button>
+                                          <button class="keyboard-key" data-key-b="U" data-key-a="г"></button>
+                                          <button class="keyboard-key" data-key-b="I" data-key-a="ш"></button>
+                                          <button class="keyboard-key" data-key-b="O" data-key-a="щ"></button>
+                                          <button class="keyboard-key" data-key-b="P" data-key-a="з"></button>
+                                          <button class="keyboard-key">[</button>
+                                          <button class="keyboard-key">]</button>
+                                          <button class="keyboard-key">\</button>
+                                    </div>
+
+                                    <div class="keyboard-row">
+                                          <button class="keyboard-key caps">caps</button>
+                                          <button class="keyboard-key" data-key-b="A" data-key-a="ф"></button>
+                                          <button class="keyboard-key" data-key-b="S" data-key-a="ы"></button>
+                                          <button class="keyboard-key" data-key-b="D" data-key-a="в"></button>
+                                          <button class="keyboard-key" data-key-b="F" data-key-a="a"></button>
+                                          <button class="keyboard-key" data-key-b="G" data-key-a="п"></button>
+                                          <button class="keyboard-key" data-key-b="H" data-key-a="р"></button>
+                                          <button class="keyboard-key" data-key-b="J" data-key-a="о"></button>
+                                          <button class="keyboard-key" data-key-b="K" data-key-a="л"></button>
+                                          <button class="keyboard-key" data-key-b="L" data-key-a="д"></button>
+                                          <button class="keyboard-key">:</button>
+                                          <button class="keyboard-key">'</button>
+                                          <button class="keyboard-key enter">Enter</button>
+                                    </div>
+
+                                    <div class="keyboard-row">
+                                          <button class="keyboard-key shift">shift</button>
+                                          <button class="keyboard-key" data-key-b="Z" data-key-a="я"></button>
+                                          <button class="keyboard-key" data-key-b="X" data-key-a="ч"></button>
+                                          <button class="keyboard-key" data-key-b="C" data-key-a="с"></button>
+                                          <button class="keyboard-key" data-key-b="V" data-key-a="м"></button>
+                                          <button class="keyboard-key" data-key-b="B" data-key-a="и"></button>
+                                          <button class="keyboard-key" data-key-b="N" data-key-a="т"></button>
+                                          <button class="keyboard-key" data-key-b="M" data-key-a="ь"></button>
+                                          <button class="keyboard-key">,</button>
+                                          <button class="keyboard-key">.</button>
+                                          <button class="keyboard-key">/</button>
+                                          <button class="keyboard-key shift">shift</button>
+                                    </div>
+
+                                    <div class="keyboard-row">
+                                          <button class="keyboard-key">ctrl</button>
+                                          <button class="keyboard-key">win</button>
+                                          <button class="keyboard-key">alt</button>
+                                          <button class="keyboard-key prob">—</button>
+                                          <button class="keyboard-key">alt</button>
+                                          <button class="keyboard-key">fn</button>
+                                          <button class="keyboard-key">Ξ</button>
+                                          <button class="keyboard-key">ctrl</button>
+
+                                          <div class="keyboard-arrows">
+                                                <button class="keyboard-key left"><span>▲</span></button>
+                                                <button class="keyboard-key up"><span>▲</span></button>
+                                                <button class="keyboard-key down"><span>▼</span></button>
+                                                <button class="keyboard-key right"><span>▼</span></button>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
       </main>
+
 </body>
 
 </html>

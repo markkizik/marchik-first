@@ -12,30 +12,44 @@ body {
     font-family: 'Quicksand';
 }
 
-/* ------------------- */
+/* --------- ttttttsabsssssss ---------- */
 
 .tabs {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 100%;
 
+    gap: 10px;
     padding: 24px;
 }
 
-.tabs a {
-    display: flex;
-    justify-content: center;
-    flex: 1;
-
-    padding: 8px 20px;
-
-    text-decoration: none;
-    color: white;
-
-    background: red;
+.tab {
+    order: 1;
 }
 
-.tabs a:hover {
-    background: rgb(8, 83, 1);
+.tab-panel {
+    display: none;
+    order: 10;
+    min-width: 100%;
+    flex: 1;
+}
+
+.tab:has(.tab-actor:checked) + .tab-panel {
+    display: block;
+}
+
+@media screen and (max-width: 480px) {
+    :is(.tab, .tab-panel) {
+        order: initial;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tab {
+        width: 100%;
+    }
 }
 
 /* ------------------- */
@@ -234,12 +248,4 @@ body {
     --key-offset: 6px;
 
     content: attr(data-key-a);
-}
-
-.tab-keyboard {
-    display: none;
-}
-
-.tab-keyboard:target {
-    display: flex;
 }
