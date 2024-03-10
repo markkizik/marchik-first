@@ -13,47 +13,6 @@ body {
     font-family: 'Quicksand';
 }
 
-/* --------- ttttttsabsssssss ---------- */
-
-.tab {
-    display: flex;
-    flex-wrap: wrap;
-
-    justify-content: center;
-
-    flex: 1 1 33.333%;
-
-    padding: 24px;
-    gap: 5px;
-
-    order: 1;
-}
-
-.tab-panel {
-    /* display: none; */
-    order: 10;
-    flex: 1 1 100%;
-    margin: auto;
-}
-
-
-.tab:has(#styleRGB:checked) ~ .tab-panel {
-    --key-strand-fill: black;
-
-    --keyboard-key-color: black;
-    --keyboard-key-fill: white;
-}
-
-.tab:has(#styleLight:checked) ~ .tab-panel {
-    --key-strand-fill: rgb(238, 238, 238);
-
-
-    --keyboard-key-color: black;
-    --keyboard-key-fill: #a0a0a0;
-}
-
-/* ------------------- */
-
 .main {
     display: flex;
 
@@ -73,6 +32,7 @@ body {
     flex-wrap: wrap;
 
     max-width: 100%;
+    
 }
 
 .key-strand {
@@ -119,6 +79,21 @@ body {
     text-transform: uppercase;
 }
 
+.keyboard::before {
+    display: flex;
+
+    align-self: flex-start;
+    justify-content: center;
+
+    margin: 0 0 20px;
+    padding: 10px;
+
+    content: var(--keyboard-company-name, attr(data-keyboard-name));
+    color: var(--keyboard-company-color, #fff);
+
+    border-bottom: 2px solid var(--keyboard-border-color, #464646);
+}
+
 
 .keyboard-row {
     display: flex;
@@ -137,7 +112,7 @@ body {
     --keyboard-key-height: 25px;
 }
 
-.tab,
+.tabchik,
 .enter {
     /* flex: 1 1 200px; */
     flex: 1 1 calc(var(--keyboard-key-width) * 1.5);

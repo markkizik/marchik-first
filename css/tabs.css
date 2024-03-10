@@ -1,7 +1,27 @@
-
 .tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+
+    flex: 1 1 25%;
+
     font-weight: bold;
+    padding: 24px;
+    gap: 5px;
+
+    order: 1;
 }
+
+.tab-panel {
+    /* display: none; */
+    order: 10;
+    flex: 1 1 100%;
+
+    max-width: max-content;
+    margin: auto;
+}
+
 
 .tab:has(.tab-actor:checked) {
     color: white;
@@ -11,7 +31,36 @@
     content: '›';
     color: white;
 }
+
 .tab:has(.tab-actor:checked)::after {
     content: '‹';
     color: white;
+}
+
+.tab:has(#styleBlack:checked)~.tab-panel,
+.style-black {
+    --keyboard-company-name: 'Mar key Boards';
+}
+
+
+.tab:has(#styleRGB:checked)~.tab-panel,
+.style-rgb {
+    --key-strand-fill: black;
+
+    --keyboard-key-color: black;
+    --keyboard-key-fill: white;
+
+    --keyboard-company-name: 'MarkeyBoards';
+}
+
+.tab:has(#styleLight:checked)~.tab-panel {
+    --key-strand-fill: rgb(238, 238, 238);
+
+    font-weight: bold;
+
+    --keyboard-key-color: black;
+    --keyboard-key-fill: #a0a0a0;
+
+    --keyboard-company-color: black;
+    --keyboard-company-name: 'MarkeyBoards 2.0';
 }
