@@ -128,3 +128,11 @@ body {
 .register-link p a:hover {
     text-decoration: underline;
 }
+
+.wrapper-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    margin-top: 24px;
+}
