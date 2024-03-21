@@ -1,108 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.avatars {
+    --avatar-count: 10;
+    --avatar-size: 70px;
+    --column-size: calc(var(--avatar-size) / 2);
 
-
-* {
-    box-sizing: border-box;
-    font-family: 'Madimi One';
-}
-
-:root {
-    --body-bg: #123;
-    --nav-bg: rgb(69, 92, 115);
-}
-
-body {
-    display: grid;
-    grid-template-columns: 20rem 1fr;
-    gap: 4rem;
-
-    background-color: var(--body-bg);
-    color: white;
-    font-size: 1.25rem;
-
-    min-height: 200vh;
-    margin: 0;
-}
-
-nav {
-    position: sticky;
-    top: 0;
-    max-height: 100svh;
-    background-color: var(--nav-bg);
-}
-
-.nav-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    --transition-duration: 500ms;
 
     display: grid;
-    gap: 2rem;
+    grid-template-columns: repeat(var(--avatar-count), var(--column-size));
 
-    padding-block: 2rem;
-    font-size: 2rem;
+    transition: grid-template-columns var(--transition-duration);
+    transition-delay: var(--transition-duration);
 }
 
-.nav-list li {
-    padding: 1rem 2rem;
-    margin-left: 2rem;
-
-    border-radius: 100vw 0 0 100vw;
+.avatars:hover,
+.avatars:focus-within {
+    --column-size: calc(var(--avatar-size) * 1.5);
+    transition-delay: 0ms;
 }
 
-.nav-list li.active {
-    view-transition-name: activeNavTab;
-    background: var(--body-bg);
-    position: relative;
+.avatar {
+    width: var(--avatar-size);
+
+    aspect-ratio: 1;
+    object-fit: cover;
+
+    border-radius: 100vw;
+    border: 5px solid white;
+    box-shadow: .25rem .25rem .5rem hsl(0 0% 0% / .2);
+
+    transition: scale var(--transition-duration);
 }
 
-.nav-list li:nth-child(1) a {
-    view-transition-name: navLink-1;
+
+.avatar:hover,
+.avatar:focus {
+    scale: 2;
+    z-index: 2;
 }
 
-.nav-list li:nth-child(2) a {
-    view-transition-name: navLink-2;
-}
-
-.nav-list li:nth-child(3) a {
-    view-transition-name: navLink-3;
-}
-
-::view-transition-group(activeNavTab) {
-    animation-duration: 500ms;
-    animation-timing-function: ease-in-out;
-}
-
-.nav-list li.active::before,
-.nav-list li.active::after {
-    --border-radius: 2rem;
-
-
-    content: '';
-    position: absolute;
-    width: var(--border-radius);
-    height: var(--border-radius);
-    right: 0;
-    background: var(--nav-bg);
-
-}
-
-.nav-list li.active::before {
-    top: calc(var(--border-radius) * -1);
-    border-radius: 0 0 100vw 0;
-    box-shadow: 10px 10px 0 10px var(--body-bg);
-}
-
-.nav-list li.active::after {
-    bottom: calc(var(--border-radius) * -1);
-    border-radius: 0 100vw 0 0;
-    box-shadow: 10px -10px 0 10px var(--body-bg);
-}
-
-.nav-list a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    position: relative;
-    z-index: 10;
+@supports selector (:has(+ *)) {
+    
+    .avatar:hover+.avatar,
+    .avatar:has(+ .avatar:hover) {
+        scale: 1.5;
+    }
 }
