@@ -78,14 +78,13 @@ nav {
 .nav-list li.active::after {
     --border-radius: 2rem;
 
-
     content: '';
     position: absolute;
+    
     width: var(--border-radius);
     height: var(--border-radius);
     right: 0;
     background: var(--nav-bg);
-
 }
 
 .nav-list li.active::before {
