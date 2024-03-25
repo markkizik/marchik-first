@@ -1,0 +1,57 @@
+.avatars {
+    --avatar-count: 10;
+    --avatar-size: 70px;
+    --column-size: calc(var(--avatar-size) / 2);
+
+    --transition-duration: 500ms;
+
+    display: grid;
+    justify-content: center;
+    padding: 54px 0;
+    grid-template-columns: repeat(var(--avatar-count), var(--column-size));
+
+    transition: grid-template-columns var(--transition-duration);
+    transition-delay: var(--transition-duration);
+}
+
+.avatars:hover,
+.avatars:focus-within {
+    --column-size: calc(var(--avatar-size) * 1.5);
+    transition-delay: 0ms;
+}
+
+.avatars__image{
+    width: var(--avatar-size);
+
+    aspect-ratio: 1;
+    object-fit: cover;
+
+    transition: scale var(--transition-duration);
+}
+
+.avatars__image img {
+    width: var(--avatar-size);
+
+    aspect-ratio: 1;
+    object-fit: cover;
+
+    border-radius: 100vw;
+    border: 5px solid white;
+    box-shadow: .25rem .25rem .5rem hsl(0 0% 0% / .2);
+
+    transition: scale var(--transition-duration);
+}
+
+@supports selector(:has(+ *)) {
+.avatars__image:hover+.avatars__image img,
+.avatars__image:has(+ .avatars__image:hover) {
+    scale: 1.5;
+}
+}
+
+
+.avatars__image:hover,
+.avatars__image:focus {
+    scale: 2;
+    z-index: 2;
+}
