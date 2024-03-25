@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@import url(./_keyframes.css);
+@import url(./_switchers.css);
+
 * {
     box-sizing: border-box;
     font-family: 'Madimi One';
@@ -23,14 +26,14 @@ body {
     margin: 0;
 }
 
-nav {
+.navigations {
     position: sticky;
     top: 0;
     max-height: 100svh;
     background-color: var(--nav-bg);
 }
 
-.nav-list {
+.navigations__list {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -44,28 +47,28 @@ nav {
     z-index: 20;
 }
 
-.nav-list li {
+.navigations__list li {
     padding: 1rem 2rem;
     margin-left: 2rem;
 
     border-radius: 100vw 0 0 100vw;
 }
 
-.nav-list li.active {
+.navigations__list .navigations__item--active {
     view-transition-name: activeNavTab;
     background: var(--body-bg);
     position: relative;
 }
 
-.nav-list li:nth-child(1) a {
+.navigations__list li:nth-child(1) a {
     view-transition-name: navLink-1;
 }
 
-.nav-list li:nth-child(2) a {
+.navigations__list li:nth-child(2) a {
     view-transition-name: navLink-2;
 }
 
-.nav-list li:nth-child(3) a {
+.navigations__list li:nth-child(3) a {
     view-transition-name: navLink-3;
 }
 
@@ -74,8 +77,8 @@ nav {
     animation-timing-function: ease-in-out;
 }
 
-.nav-list li.active::before,
-.nav-list li.active::after {
+.navigations__list .navigations__item--active::before,
+.navigations__list .navigations__item--active::after {
     --border-radius: 2rem;
 
     content: '';
@@ -87,19 +90,19 @@ nav {
     background: var(--nav-bg);
 }
 
-.nav-list li.active::before {
+.navigations__list .navigations__item--active::before {
     top: calc(var(--border-radius) * -1);
     border-radius: 0 0 100vw 0;
     box-shadow: 10px 10px 0 10px var(--body-bg);
 }
 
-.nav-list li.active::after {
+.navigations__list .navigations__item--active::after {
     bottom: calc(var(--border-radius) * -1);
     border-radius: 0 100vw 0 0;
     box-shadow: 10px -10px 0 10px var(--body-bg);
 }
 
-.nav-list a {
+.navigations__list a {
     display: block;
     color: white;
     text-decoration: none;
@@ -129,7 +132,16 @@ nav {
     transition-delay: 0ms;
 }
 
-.avatar {
+.avatars__image{
+    width: var(--avatar-size);
+
+    aspect-ratio: 1;
+    object-fit: cover;
+
+    transition: scale var(--transition-duration);
+}
+
+.avatars__image img {
     width: var(--avatar-size);
 
     aspect-ratio: 1;
@@ -142,14 +154,16 @@ nav {
     transition: scale var(--transition-duration);
 }
 
-.avatar:hover+.avatar,
-.avatar:has(+ .avatar:hover) {
+@supports selector(:has(+ *)) {
+.avatars__image:hover+.avatars__image img,
+.avatars__image:has(+ .avatars__image:hover) {
     scale: 1.5;
+}
 }
 
 
-.avatar:hover,
-.avatar:focus {
+.avatars__image:hover,
+.avatars__image:focus {
     scale: 2;
     z-index: 2;
 }

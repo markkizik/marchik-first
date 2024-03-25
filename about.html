@@ -6,7 +6,7 @@
 
     <title>Marky | Mef</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/switchers.css">
+    <link rel="stylesheet" href="css/_switchers.css">
 
     <meta name="view-transition" content="same-origin" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -15,50 +15,52 @@
 
 <body>
 
-    <nav>
-        <ul class="nav-list">
-            <li>
-                <a href="index.html">home</a>
+    <nav class="navigations">
+        <ul class="navigations__list">
+            <li class="navigations__item">
+                <a href="index.html" aria-current="page" class="navigations__link navigations__link--1">home</a>
             </li>
-            <li class="active">
-                <a href="about.html" aria-current="page">About</a>
+            <li class="navigations__item navigations__item--active">
+                <a href="about.html" class="navigations__link navigations__link--2">About</a>
             </li>
-            <li>
-                <a href="blog.html">Blog</a>
-            </li>
-            <li><a href="#">Another</a></li>
-            <li><a href="#">Page</a></li>
-            <li><a href="#">And anothe</a></li>
+            <li class="navigations__item">
+                <a href="blog.html" class="navigations__link navigations__link--3">Blog</a>
+            </li class="navigations__item">
+            <li class="navigations__item"><a href="#" class="navigations__link navigations__link--4">Another</a></li>
+            <li class="navigations__item"><a href="#" class="navigations__link navigations__link--5">Page</a></li>
+            <li class="navigations__item"><a href="#" class="navigations__link navigations__link--6">And anothe</a></li>
         </ul>
     </nav>
 
     <main>
-        <input type="checkbox" id="check" class="toggle">
-        <label for="check">Checked?</label>
+        <div class="switcher">
+            <input class="switcher__input" id="check" type="checkbox">
+            <label for="check" class="switcher__label">Checked?</label>
+        </div>
 
-        <section>
-            <div class="color"></div>
-            <div class="color"></div>
-            <div class="color"></div>
-            <ul class="list-link">
-                <li class="li__list-link">
-                    <a href=""><i class='bx bxl-facebook'></i></a>
-                </li>
-                <li class="li__list-link">
-                    <a href=""><i class='bx bxl-twitch'></i></a>
-                </li>
-                <li class="li__list-link">
-                    <a href=""><i class='bx bxl-youtube'></i></a>
-                </li>
-                <li class="li__list-link">
-                    <a href=""><i class='bx bxl-instagram'></i></a>
-                </li>
-                <li class="li__list-link">
-                    <a href=""><i class='bx bxl-github'></i></i></a>
-                </li>
-            </ul>
-        </section>
+            <div class="social_buttons">
+
+                <ul class="social-buttons__list">
+                    <li class="social-buttons__item">
+                        <a href="" class="social-buttons__link"><i class='bx bxl-facebook'></i></a>
+                    </li>
+                    <li class="social-buttons__item">
+                        <a href="" class="social-buttons__link"><i class='bx bxl-twitch'></i></a>
+                    </li>
+                    <li class="social-buttons__item">
+                        <a href="" class="social-buttons__link"><i class='bx bxl-youtube'></i></a>
+                    </li>
+                    <li class="social-buttons__item">
+                        <a href="" class="social-buttons__link"><i class='bx bxl-instagram'></i></a>
+                    </li>
+                    <li class="social-buttons__item">
+                        <a href="" class="social-buttons__link"><i class='bx bxl-github'></i></i></a>
+                    </li>
+                </ul>
+            </div>
+
     </main>
 
-</body>                                                                       
+</body>
+
 </html>
