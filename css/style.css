@@ -39,9 +39,10 @@ body {
 
 .checkbox__input {
     position: absolute;
+    inset: 0;
 
     z-index: 1;
-    opacity: 0;
+    opacity: 1;
 }
 
 .checkbox__label::before {
@@ -73,8 +74,7 @@ body {
 
 .checkbox.--span-controle {
     --checkbox-control-fn-first: calc(var(--checkbox-circle-size) - 30%);
-    --checkbox-label-content: none !important;
-    color: red;
+    color: black;
 }
 
 .checkbox__controle {
@@ -86,10 +86,12 @@ body {
 }
 
 .checkbox__controle:last-of-type {
-    font-size: var(--checkbox-control-fn-first, 0);
+    font-size: var(--checkbox-control-fn-last, 0);
 }
 
 .checkbox.--span-controle:has(.checkbox__input:checked) {
     --checkbox-control-fn-first: 0;
-    --checkbox-control-fn-last: calc(var(--checkbox-font-size) - 30%);
+    --checkbox-control-fn-last: calc(var(--checkbox-font-size));
+
+    color: white;
 }
