@@ -1,6 +1,12 @@
+/* components */
+@import url(./Components/swithc.css);
+@import url(./Components/checkbox.css);
+@import url(./Components/tumbler.css);
+@import url(./Components/toggle.css);
+
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 
     background: #4d2424;
@@ -8,90 +14,6 @@ body {
 
 .container {
     display: flex;
-    gap: 50px;
-}
-
-.checkbox {
-    --checkbox-circle-size: 16px;
-    --checkbox-font-size: 10px;
-    --checkbox-label-inset: calc(100% - var(--checkbox-circle-size) - 2px);
-    --checkbox-color-circle: #bbbbbb;
-
-    position: relative;
-
-    display: inline-flex;
-    justify-content: center;
-
-    background-color: white;
-    border-radius: 15px;
-
-    font-weight: 600;
-    text-transform: uppercase;
-
-    /* aspect-ratio: 2/1; */
-    height: var(--checkbox-circle-size);
-    min-width: calc(var(--checkbox-circle-size) * 3);
-
-    padding: 2px 2px 2px calc(var(--checkbox-circle-size) + 4px);
-
-    transition: background-color 0.3s ease-in-out;
-}
-
-.checkbox__input {
-    position: absolute;
-    inset: 0;
-
-    z-index: 1;
-    opacity: 1;
-}
-
-.checkbox__label::before {
-    position: absolute;
-    inset: 50% var(--checkbox-label-inset) auto auto;
-    transform: translate(0, -50%);
-
-    content: '';
-
-    background-color: var(--checkbox-color-circle);
-    border-radius: 50%;
-
-    aspect-ratio: 1/1;
-    width: var(--checkbox-circle-size);
-
-    transition: inset 0.3s ease-in-out;
-    transition-property: background-color, inset;
-}
-
-.checkbox:has(.checkbox__input:checked) {
-    --checkbox-label-inset: calc(0% + 2px);
-    --checkbox-color-circle: #636363;
-
-    padding: 2px calc(var(--checkbox-circle-size) + 4px) 2px 2px;
-    color: red;
-
-    background-color: black;
-}
-
-.checkbox.--span-controle {
-    --checkbox-control-fn-first: calc(var(--checkbox-circle-size) - 30%);
-    color: black;
-}
-
-.checkbox__controle {
-    margin: auto 0;
-}
-
-.checkbox__controle:first-of-type {
-    font-size: var(--checkbox-control-fn-first, 0);
-}
-
-.checkbox__controle:last-of-type {
-    font-size: var(--checkbox-control-fn-last, 0);
-}
-
-.checkbox.--span-controle:has(.checkbox__input:checked) {
-    --checkbox-control-fn-first: 0;
-    --checkbox-control-fn-last: calc(var(--checkbox-font-size));
-
-    color: white;
+    flex-direction: column;
+    gap: 35px;
 }

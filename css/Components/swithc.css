@@ -1,0 +1,48 @@
+.switch {
+    --switch-round-size: 24px;
+    --switch-round-inset: calc(100% - var(--switch-round-size));
+    --switch-color-circle: white;
+
+    position: relative;
+
+    background-color: rgba(155, 155, 155, 1);
+    border-radius: 20px;
+
+
+    height: 16px;
+    width: 50px;
+
+    transition: background-color 0.3s ease-in-out;
+}
+
+.switch__input {
+    position: absolute;
+
+    inset: 0;
+    z-index: 1;
+    opacity: 0;
+}
+
+.switch__round::before {
+    position: absolute;
+    content: '';
+
+    inset: 50% var(--switch-round-inset) auto auto;
+    transform: translate(0, -50%);
+
+    aspect-ratio: 1/1;
+    width: var(--switch-round-size);
+
+    background-color: var(--switch-color-circle);
+    border-radius: 50%;
+
+    transition: 0.3s ease-in-out;
+    transition-property: background-color, inset;
+}
+
+.switch:has(.switch__input:checked) {
+    --switch-round-inset: calc(0% + 0%);
+
+    background-color: rgba(164, 114, 234, 1);
+    --switch-color-circle: rgba(98, 0, 238, 1);
+}

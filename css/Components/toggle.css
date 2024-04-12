@@ -1,0 +1,73 @@
+.toggle {
+    --toggle-size-round: 22px;
+    --togle-circle-inset: calc(100% - var(--toggle-size-round) - 2px);
+    --togle-circle-color: rgba(255, 255, 255, 1);
+    --toggle-control-size-first: calc(var(--toggle-size-round) - 30%);
+
+    position: relative;
+
+    height: 24px;
+    width: 50px;
+
+    background-color: rgba(233, 233, 233, 1);
+    border-radius: 20px;
+
+    transition: background-color 0.5s ease-in-out;
+}
+
+.toggle__input {
+    position: absolute;
+
+    inset: 0;
+    z-index: 1;
+    opacity: 0;
+}
+
+.toggle__circle::before {
+    position: absolute;
+    content: '';
+
+    inset: 50% var(--togle-circle-inset) auto auto;
+    transform: translate(0, -50%);
+
+    aspect-ratio: 1/1;
+    width: var(--toggle-size-round);
+
+    background-color: var(--togle-circle-color);
+    border-radius: 50%;
+
+    transition: 0.5s ease-in-out;
+    transition-property: inset, background-color;
+}
+
+.toggle:has(.toggle__input:checked) {
+    --togle-circle-inset: calc(0% + 2px);
+    --togle-circle-color: rgba(51, 51, 51, 1);
+
+    background-color: rgba(98, 98, 98, 1);
+}
+
+.toggle__svg {
+    position: absolute;
+
+    inset: 50% calc(var(--togle-circle-inset) - 1px) auto auto;
+    transform: translate(0, -50%);
+
+    width: 24px;
+    height: 18px;
+
+    animation: display-anim 0.5s ease-in-out;
+}
+
+.toggle__svg:first-of-type {
+    font-size: var(--toggle-control-size-first, 0);
+}
+
+.toggle__svg:last-of-type {
+    font-size: var(--toggle-control-size-last, 0);
+}
+
+.toggle:has(.toggle__input:checked) {
+    --toggle-control-size-first: 0;
+    --toggle-control-size-last: calc(var(--toggle-control-size-first));
+}
