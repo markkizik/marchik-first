@@ -3,6 +3,7 @@
 @import url(./Components/checkbox.css);
 @import url(./Components/tumbler.css);
 @import url(./Components/toggle.css);
+@import url(./Components/selector.css);
 
 body {
     display: flex;

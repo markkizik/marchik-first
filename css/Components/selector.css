@@ -1,0 +1,93 @@
+.selector {
+    --selector-size-round: 60px;
+    --selector-round-inset: calc(100% - var(--selector-size-round));
+    --selector-round-color: white;
+    
+    position: relative;
+
+    height: 29px;
+    width: 100px;
+
+    background-color: rgb(47,218,220);
+    border-radius: 20px;
+
+    box-shadow: inset 0 1px 4px hsla(0,0%,0%,.5),
+                inset 0 0 10px hsla(0,0%,0%,.5),
+                0 0 0 1px hsla(0,0%,0%,.1),
+                0 -1px 2px 2px hsla(0,0%,0%,.25);
+
+    transition: background-color 0.6s ease-in-out;
+}
+
+.selector__input {
+ position: absolute;
+
+ inset: 0;
+ z-index: 10;
+ opacity: 0;
+}
+
+.selector__round {
+    position: absolute;
+
+    inset: 50% var(--selector-round-inset) auto auto;
+    transform: translate(0%, -50%);
+
+    height: 29px;
+    width: 60px;
+
+    background-color: var(--selector-round-color);
+    border-radius: 30px;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.46) inset,
+    0px 0px 5px 2px rgba(0,0,0,0.22);
+
+    transition: inset 0.5s ease-in-out;
+}
+
+.selector__round:nth-child(2) {
+    inset: 50% var(--selector-round-inset) auto auto;
+
+    height: 29px;
+    width: 30px;
+
+    border-radius: 50%;
+    background-color: hsla(0,0%,0%, 0);
+    box-shadow: 10px 0px 10px -11px rgba(0,0,0,0.2) inset;
+
+    z-index: 1;
+}
+
+.selector__round:nth-child(3) {
+    inset: 50% calc(var(--selector-round-inset) + 10px) auto auto;
+    z-index: 1;
+
+    height: 29px;
+    width: 30px;
+
+    border-radius: 50%;
+    background-color: hsla(0,0%,0%, 0);
+    box-shadow: 10px 0px 10px -11px rgba(0,0,0,0.2) inset;
+}
+
+.selector__round:nth-child(4) {
+    inset: 50% calc(var(--selector-round-inset) + 20px) auto auto;
+    z-index: 1;
+
+    height: 29px;
+    width: 30px;
+
+    border-radius: 50%;
+    background-color: hsla(0,0%,0%, 0);
+    box-shadow: 10px 0px 10px -11px rgba(0,0,0,0.2) inset;
+}
+ 
+
+.selector:has(.selector__input:checked) {
+    --selector-round-inset: 0%;
+    background-color: rgb(251,86,4); 
+
+}
+
+/* 0px 0px 6px -6px rgba(33,33,33,1),
+-3px 4px 24px 0px rgba(55,0,0,0.1),
+7px -6px 6px -6px rgba(0,0,0,0.22); */
