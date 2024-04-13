@@ -2,7 +2,7 @@
     --toggle-size-round: 22px;
     --togle-circle-inset: calc(100% - var(--toggle-size-round) - 2px);
     --togle-circle-color: rgba(255, 255, 255, 1);
-    --toggle-control-size-first: calc(var(--toggle-size-round) - 30%);
+    --toggle-icon-hidden-before: 1;
 
     position: relative;
 
@@ -40,6 +40,19 @@
     transition-property: inset, background-color;
 }
 
+.toggle__icon-1, .toggle__icon-2 {
+    position: absolute;
+    
+    inset: 50% calc(var(--togle-circle-inset) + 3px) auto auto;
+    transform: translate(0, -50%);
+
+    transition: 0.5s ease-in-out;
+}
+
+.toggle__icon-2 {
+    inset: 50% calc(var(--togle-circle-inset) + 4px) auto auto;
+}
+
 .toggle:has(.toggle__input:checked) {
     --togle-circle-inset: calc(0% + 2px);
     --togle-circle-color: rgba(51, 51, 51, 1);
@@ -47,27 +60,15 @@
     background-color: rgba(98, 98, 98, 1);
 }
 
-.toggle__svg {
-    position: absolute;
-
-    inset: 50% calc(var(--togle-circle-inset) - 1px) auto auto;
-    transform: translate(0, -50%);
-
-    width: 24px;
-    height: 18px;
-
-    animation: display-anim 0.5s ease-in-out;
+.toggle__icon-1 {
+    opacity: var(--toggle-icon-hidden-before, 0);
 }
 
-.toggle__svg:first-of-type {
-    font-size: var(--toggle-control-size-first, 0);
-}
-
-.toggle__svg:last-of-type {
-    font-size: var(--toggle-control-size-last, 0);
+.toggle__icon-2 {
+    opacity: var(--toggle-icon-hidden-after, 0);
 }
 
 .toggle:has(.toggle__input:checked) {
-    --toggle-control-size-first: 0;
-    --toggle-control-size-last: calc(var(--toggle-control-size-first));
+    --toggle-icon-hidden-before: 0;
+    --toggle-icon-hidden-after: 1;
 }
