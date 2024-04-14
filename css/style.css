@@ -4,6 +4,7 @@
 @import url(./Components/tumbler.css);
 @import url(./Components/toggle.css);
 @import url(./Components/selector.css);
+@import url(./Components/complete.css);
 
 body {
     display: flex;
