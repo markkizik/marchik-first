@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap');
+
+.container__buttons {
+    display: inline-flex;
+    gap: 3px;
+}
+
+.tick__block {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Platypi';
+
+
+    width: 60px;
+    height: 20px;
+
+    font-size: 8.5px;
+    padding: 0 0 0 5px;
+
+    color: white;
+
+    background-color: rgb(67,138,200);
+    border-radius: 4px;
+
+    z-index: 1;
+}
+
+.tick__block.--info {
+    background-color: rgb(93,192,224);
+
+    width: 50px;
+    height: 20px;
+    padding: 0 0 0 5px;
+}
+
+.tick__block.--success {
+    background-color: rgb(91,185,91);
+}
+
+ .tick__input {
+    position: absolute;
+    margin: 0 1px;
+    opacity: 0;
+    z-index: 2;
+} 
+
+.tick__button {
+    position: relative;
+    display: flex;
+
+    padding: 0;
+    border: none;
+    
+    margin: auto;
+    
+
+    background-color: white;
+    border-radius: 6px;
+
+
+    height: 10px;
+    width: 15px;
+}
+
+.icon {
+    position: absolute;
+    top: 15%;
+    right: 55%;
+    left: 25%;
+
+    width: 7px;
+
+    opacity: 0;
+
+    fill: rgb(78,137,188);
+}
+
+.icon.--2 {
+    fill: rgb(93,192,224);
+}
+
+.icon.--3 {
+    fill: rgb(91,185,91);
+}
+
+.tick__input:checked + .icon {
+    opacity: 1;
+}

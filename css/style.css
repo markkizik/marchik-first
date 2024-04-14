@@ -5,6 +5,7 @@
 @import url(./Components/toggle.css);
 @import url(./Components/selector.css);
 @import url(./Components/complete.css);
+@import url(./Components/task.css);
 
 body {
     display: flex;
