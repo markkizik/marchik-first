@@ -18,74 +18,77 @@ body {
     background: rgb(83,114,239);
 }
 
-:where(.btn) {
+button {
     padding: 0;
     border: none;
     font: inherit;
     color: inherit;
     background-color: transparent;
+
+    cursor: pointer;
 }
 
-.container__tag {
+.card-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
     width: 490px;
 
     padding: 15px;
 
     border-radius: 10px;
     background-color: white;
+
+    & .bxs-purchase-tag {
+        font-size: 20px;
+    
+}
 }
 
-.tag__tittle {
+.card-tags__top {
     display: flex;
     align-items: center;
+    gap: 8px;
 }
 
-.bxs-purchase-tag {
-    font-size: 20px;
-}
-
-.tag__tittle h2 {
-    margin-left: 8px;
+.card-tags__top h2 {
     font-size: 22px;
-
     font-weight: 600;
 }
 
-.tag__content {
+.card-tags__bages {
+    gap: 8px;
     margin-top: 10px;
-}
-
-.tag__bages {
-    margin-top: 10px;
-
     padding: 9px 16px;
 
     border: 1px solid #666;
     border-radius: 5px;
 }
 
-.tag__bages .btn {
+.card-tags__bages button {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
     padding: 5px 10px;
-    margin: 8px 2px 5px 0;
+
+    /* margin: 8px 2px 5px 0; */
 
     border-radius: 5px;
     background-color: rgb(233, 233, 233);
 }
 
-.tag__bages svg {
-    position: relative;
-    top: 3px;
+.card-tags__bages svg {
+    padding: 2px;
 
-    cursor: pointer;
-
-    margin-left: 8px;
-    padding: 3px;
+    width: 10px;
 
     border-radius: 50%;
     background-color: #ccc;
 }
 
-.tag__bottom {
+.card-tags__bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
