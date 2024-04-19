@@ -38,3 +38,22 @@
     border-radius: 50%;
     background-color: #ccc;
 }
+
+.card-tags__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 10px;
+}
+
+.btn.--bottom {
+    padding: 9px 15px;
+
+    color: #fff;
+    
+    cursor: pointer;
+
+    border-radius: 5px;
+    background-color: rgb(89, 122, 253);
+}
