@@ -1,0 +1,40 @@
+.card-tags__bages {
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    padding: 9px 16px;
+
+    min-height: 100px;
+
+    border: 1px solid #666;
+    border-radius: 5px;
+}
+
+.bages {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 5px 10px;
+
+    border-radius: 5px;
+    background-color: rgb(233, 233, 233);
+}
+
+.bages button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px;
+
+    width: 17px;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+    background-color: #ccc;
+}
