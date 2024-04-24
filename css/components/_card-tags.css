@@ -54,20 +54,6 @@
     background-color: rgb(233, 233, 233);
 }
 
-.bage button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 5px;
-
-    width: 17px;
-    aspect-ratio: 1;
-
-    border-radius: 50%;
-    background-color: #ccc;
-}
-
 .card-tags__bottom {
     display: flex;
     align-items: center;
