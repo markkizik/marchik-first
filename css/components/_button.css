@@ -13,10 +13,12 @@
     background-color: rgb(89, 122, 253);
 }
 
-.button.--remove .bx-x {
+.button.--remove {
     display: flex;
     align-items: center;
     justify-content: center;
+
+
     /* padding: 1px; */
 
     width: 15px;
@@ -25,15 +27,19 @@
     border-radius: 50%;
     background-color: #ccc;
     
-/* 
+
     &.button.--remove:before {
 
-        content: '';
+        content: "\ec8d";
     
-        width: 10px;
-        aspect-ratio: 1;
-    
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.70704 8.29289L18 0L19.4142 1.41422L11.1213 9.7071L19.4142 18L18 19.4142L9.70704 11.1213L1.41422 19.4142L0 18L8.29283 9.7071L7.7486e-07 1.41421L1.41422 5.54323e-06L9.70704 8.29289Z' fill='black'/%3E%3C/svg%3E%0A");
-
-    } */
+        font-family: boxicons !important;
+        font-weight: 400;
+        font-style: normal;
+        font-variant: normal;
+        line-height: 1;
+        text-rendering: auto;
+        display: inline-block;
+        text-transform: none;
+        speak: none;
+    }
 }
