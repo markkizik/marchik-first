@@ -1,15 +1,16 @@
 .checkbox {
     --checkbox-circle-size: 20px;
-    --checkbox-circle-inset: calc(100% - var(--checkbox-circle-size));
+    --checkbox-circle-inset: calc(100% - var(--checkbox-circle-size) - 2px);
     --bg-color: white;
 
     position: relative;
 
     display: inline-flex;
     justify-content: center;
+    align-items: center;
 
     width: calc(var(--checkbox-circle-size) * 3);
-    height: var(--checkbox-circle-size);
+    height: calc(var(--checkbox-circle-size) + 2px);
 
     background-color: #B0B0B0;
     border-radius: 20px;
@@ -26,12 +27,13 @@
     opacity: 0;
 }
 
+
 .checkbox__label::before {
     position: absolute;
     inset: 50% var(--checkbox-circle-inset) auto auto;
     transform: translate(0, -50%);
 
-    content: '\e90c';
+    content: '';
 
     width: var(--checkbox-circle-size);
     aspect-ratio: 1/1;
@@ -43,9 +45,7 @@
 }
 
 .checkbox:has(.checkbox__input:checked) {
-    --checkbox-circle-inset: 0%;
-
-    content: '\e90b';
+    --checkbox-circle-inset: calc(0% + 2px);
 
     background-color: #222222;
 }
