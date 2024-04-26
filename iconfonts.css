@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'icon-mark';
+  font-family: 'mark-icon';
   src:  url('fonts/icon-mark.eot?70f2co');
   src:  url('fonts/icon-mark.eot?70f2co#iefix') format('embedded-opentype'),
     url('fonts/icon-mark.ttf?70f2co') format('truetype'),
@@ -10,9 +10,9 @@
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="mki-"], [class*=" mki-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icon-mark' !important;
+  font-family: 'mark-icon' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -25,33 +25,33 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-ilon:before {
+.mki-ilon:before {
   content: "\e900";
 }
-.icon-False:before {
+.mki-False:before {
   content: "\e901";
 }
-.icon-Figma:before {
+.mki-Figma:before {
   content: "\e902";
 }
-.icon-Figma_solid:before {
+.mki-Figma_solid:before {
   content: "\e903";
 }
-.icon-github:before {
+.mki-github:before {
   content: "\e904";
 }
-.icon-github_solid:before {
+.mki-github_solid:before {
   content: "\e905";
 }
-.icon-Instagram:before {
+.mki-Instagram:before {
   content: "\e906";
 }
-.icon-Instagram_solid:before {
+.mki-Instagram_solid:before {
   content: "\e907";
 }
-.icon-viber_solid:before {
+.mki-viber_solid:before {
   content: "\e909";
 }
-.icon-viber:before {
+.mki-viber:before {
   content: "\e908";
 }
