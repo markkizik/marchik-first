@@ -14,7 +14,7 @@
 <body>
 
     <div class="checkbox">
-        <input class="checkbox__input" type="checkbox">
+        <input class="checkbox__input" type="checkbox" id="checkbox">
         <mark class="checkbox__label">
 
             <svg class="checkbox__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +37,7 @@
     </div>
 
     <script>
-        const checkbox = document.getElementById ("checkbox")
+        const checkbox = document.getElementById("checkbox")
         checkbox.addEventListener("change", () => {
             document.body.classlist.toggle("dark-mdoe")
         })
