@@ -37,9 +37,11 @@
     </div>
 
     <script>
-        const checkbox = document.getElementById("checkbox")
-        checkbox.addEventListener("change", () => {
-            document.body.classlist.toggle("dark-mdoe")
+        const checkbox = document.getElementById("checkbox");
+
+        checkbox.addEventListener("change", (event) => {
+            console.log('event', event)
+            document.body.classList.toggle("dark-mdoe");
         })
     </script>
 </body>

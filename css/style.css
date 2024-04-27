@@ -46,3 +46,8 @@ button {
 
     transition: background-color 0.6s ease-in-out;
 } */
+
+
+.dark-mdoe {
+    background-color: black;
+}
