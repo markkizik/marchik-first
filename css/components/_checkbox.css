@@ -61,9 +61,8 @@
 
 .checkbox:has(.checkbox__input:checked) {
     --checkbox-circle-inset: calc(0% + 2px);
-
-    background-color: #222222;
-
     --checkbox-icon-opacity: 0;
     --checkbox-icon-opacity-last: 1;
+
+    background-color: #222222;
 }
