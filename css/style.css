@@ -6,6 +6,8 @@
 
 /* components */
 @import url('./components/_checkbox.css');
+@import url('./components/_home-welcome.css');
+@import url('./components/_aside.css');
 
 
 * {
@@ -22,24 +24,21 @@ body {
     justify-content: center;
     align-items: center;
 
-    min-height: 100vh;
-
-    background-color: rgb(83,114,239);
-
-    transition: background-color 0.6s ease-in-out;
+    height: 100vh;
 }
 
 button {
-    margin-left: 168px;
-
     border: none;
     font: inherit;
     color: inherit;
-    /* background-color: transparent; */
+    background-color: transparent;
 
     cursor: pointer;
 }
 
-.dark-mode {
-    background-color: black;
+.main {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100vw;
 }

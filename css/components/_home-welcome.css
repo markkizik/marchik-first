@@ -1,0 +1,80 @@
+.home__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-welcome {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+.home-welcome__logo-company {
+    display: flex;
+    align-self: flex-end;
+    margin-bottom: 8px;
+    font-size: 6px;
+
+    grid-area: 1/1;
+
+    a {
+        text-decoration: none;
+        color: black;
+
+        font-weight: bold;
+
+        text-transform: uppercase;
+    }
+
+}
+
+.home-welcome__first {
+    align-items: center;
+    grid-area: 2/1;
+
+    text-align: start;
+}
+
+p {
+    font-size: 12px;
+
+
+    & span {
+        color: red;
+    }
+}
+
+.home-welcome__second {
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+
+    text-align: start;
+
+    grid-area: 2/2;
+}
+
+.home-welcome__bottom {
+    display: inline-flex;
+    align-self: flex-start;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+    font-size: 6px;
+
+    grid-area: 3/1;
+
+    a {
+        text-decoration: none;
+        color: black;
+
+        font-weight: bold;
+
+        text-transform: uppercase;
+    }
+}
