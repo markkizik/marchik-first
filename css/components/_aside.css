@@ -1,4 +1,14 @@
+.container {
+    position: relative;
+    
+    width: 120px;
+    min-height: 100vh;
+}
+
 .aside {
+    position: relative;
+    display: inline-block;
+    justify-content: end;
 
     width: 120px;
     min-height: 100vh;
