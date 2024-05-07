@@ -1,78 +1,70 @@
-.container {
-    position: relative;
-    
-    width: 120px;
-    min-height: 100vh;
-}
 
-.aside {
-    position: relative;
-    display: inline-block;
-    justify-content: end;
-
-    width: 120px;
-    min-height: 100vh;
-
-    background-color: black;
-}
-
-.aside__content {
+.menu__aside {
     display: flex;
     flex-direction: column;
+
+    background-color: black;
+
+    max-width: 150px;
+    height: 100vh;
+
+    grid-area: aside;
+}
+
+.menu__aside-content {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 70%;
 
     color: white;
 }
 
-.line {
+.menu__aside-line {
     display: inline-flex;
     justify-content: center;
     border-top: 0.3px solid #ccc;
     
-    margin: 0 25px 10px;
+    margin: 20px 10px 10px;
 }
 
-.aside__text-language {
+.menu__aside-text-language {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 0 0;
+    text-align: center;
+
+    p {
+        font-size: 10px;
+    }
+
+}
+
+.menu__aside-language {
     display: inline-flex;
     justify-content: center;
     align-items: center;
 
     text-align: center;
- 
-    min-height: 35px;
 
-    p {
-    font-size: 5.5px;
+    button {
+    font-size: 10px;
 
     font-weight: bold;
     text-transform: uppercase;
     }
 }
 
-.aside__language {
+.menu__aside-links {
     display: flex;
-    justify-content: center;
-    align-items: center;
 
-    min-height: 20px;
-
-    /* border: 1px solid red; */
-
-    button {
-        font-size: 6px;
-    }
-
-}
-
-.aside__links {
-    display: flex;
-    justify-content: flex-end;
     align-items: center;
     flex-direction: column;
-    
-    min-height: 78vh;
+
 }
 
-.aside__link {
+.menu__aside-link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,12 +82,12 @@
     transition: scale 0.3s ease-in-out;
 }
 
-.aside__link svg {
+.menu__aside-link svg {
     fill: white;
     width: 8px;
 }
 
-.aside__link:hover {
+.menu__aside-link:hover {
     scale: 1.25;
 
     transition: scale 0.3s ease-in-out;

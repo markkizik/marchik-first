@@ -1,80 +1,50 @@
-.home__container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.home-welcome {
+.menu {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 'main aside';
 
-    justify-content: center;
-    align-items: center;
-
+    min-width: 100%;
+    min-height: 100%;
 }
 
-.home-welcome__logo-company {
-    display: flex;
+/* :where(a) {
+    text-decoration: none;
+        color: black;
+} */
+
+.menu__main {
+    grid-area: main;
+
+
+    font-size: 10px;
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.menu__nav {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: repeat(3, 2fr);
+}
+
+.menu__logo-company {
     align-self: flex-end;
-    margin-bottom: 8px;
-    font-size: 6px;
-
-    grid-area: 1/1;
-
-    a {
-        text-decoration: none;
-        color: black;
-
-        font-weight: bold;
-
-        text-transform: uppercase;
-    }
-
+    text-align: center;
+    margin: 10px 0;
 }
 
-.home-welcome__first {
-    align-items: center;
+.menu__first {
     grid-area: 2/1;
-
-    text-align: start;
 }
 
-p {
-    font-size: 12px;
-
-
-    & span {
-        color: red;
-    }
-}
-
-.home-welcome__second {
-    display: flex;
-    justify-content: center;
-    align-self: flex-start;
-
-    text-align: start;
-
+.menu__second {
     grid-area: 2/2;
+
 }
 
-.home-welcome__bottom {
-    display: inline-flex;
-    align-self: flex-start;
-    justify-content: space-between;
-    margin-top: 20px;
+.menu__bottom {
+    display: flex;
     gap: 10px;
-    font-size: 6px;
-
-    grid-area: 3/1;
-
-    a {
-        text-decoration: none;
-        color: black;
-
-        font-weight: bold;
-
-        text-transform: uppercase;
-    }
 }
