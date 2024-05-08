@@ -6,12 +6,15 @@
 
 /* components */
 @import url('./components/_menu.css');
-@import url('./components/_aside.css');
-
 
 * {
     margin: 0;
     padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 body {
@@ -25,6 +28,7 @@ body {
     font-family: "Roboto", sans-serif;
     font-style: normal;
     line-height: 1.4;
+
 }
 
 button {
@@ -36,9 +40,13 @@ button {
     cursor: pointer;
 }
 
-.main {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    width: 100vw;
+.menu::before {
+    z-index: -1;
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    content: url(../img/cafebg.jpg);
+    opacity: 0.1;
 }
