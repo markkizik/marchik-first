@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
 
-    font-family: "Source Sans 3", sans-serif;
+    box-sizing: border-box;
 }
 
 a {
@@ -20,4 +20,15 @@ body {
     min-height: 100vh;
 
     background-color: rgba(242, 245, 247, 1);
+
+    font-family: "Source Sans 3", sans-serif;
+}
+
+.container {
+    max-width: 1380px;
+    margin: 0 auto;
+
+    &.--relative {
+        position: relative;
+    }
 }

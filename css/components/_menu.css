@@ -1,0 +1,13 @@
+.layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-support {
+    /* background-image: url("../../img/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat; */
+
+    background-color: rgb(254, 0, 216);
+}
