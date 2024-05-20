@@ -1,6 +1,7 @@
 .header {
     --header-logo-size: 190px;
     --header-spacer: 16px;
+    
     position: relative;
     display: flex;
     flex-direction: column;
@@ -57,7 +58,6 @@
 
 .nav {
     display: inline-flex;
-    gap: 13px;
     list-style: none;
 }
 

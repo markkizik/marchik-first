@@ -2,6 +2,10 @@
 
 /* --components-- */
 @import url(./components/_header.css);
+@import url(./components/_home-support.css);
+@import url(./components/_brick.css);
+@import url(./components/_footer.css);
+@import url(./components/_root.css);
 
 * {
     margin: 0;
@@ -28,7 +32,22 @@ body {
     max-width: 1380px;
     margin: 0 auto;
 
+    padding-left: 24px;
+    padding-right: 24px;
+
     &.--relative {
         position: relative;
     }
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 25px;
+    text-transform: uppercase;
 }
