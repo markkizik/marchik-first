@@ -1,0 +1,44 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 8px 24px;
+
+    font-size: 24px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+
+    min-height: 48px;
+    min-width: var(--buton-min-width, auto);
+
+    background-color: #000;
+
+
+    transition: scale 0.3s ease-in-out;
+
+    &.--light {
+        color: #000;
+        background: #fff;
+    }
+
+    &.--line {
+        border: 1px solid white;
+        background: transparent;
+        text-align: center;
+
+        --buton-min-width: 350px;
+    }
+
+    &.--second {
+        background-color: rgba(91, 64, 64, 0.7);
+    }
+
+    &:hover {
+        scale: 1.1;
+        transition: scale 0.3s ease-in-out;
+    }
+}

@@ -6,6 +6,7 @@
 @import url(./components/_brick.css);
 @import url(./components/_footer.css);
 @import url(./components/_root.css);
+@import url(./components/_buttons.css);
 
 * {
     margin: 0;
@@ -38,16 +39,20 @@ body {
     &.--relative {
         position: relative;
     }
+
+    &.--spacer2x {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    &.--flex {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 }
 
 .layout {
     display: flex;
     flex-direction: column;
-}
-
-.title {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 25px;
-    text-transform: uppercase;
 }

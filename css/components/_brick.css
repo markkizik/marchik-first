@@ -60,19 +60,6 @@
     margin-bottom: 30px;
 }
 
-.brick-first__link a {
-    color: white;
-
-    text-align: center;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 25px;
-    letter-spacing: 1px;
-
-    border: 1px solid white;
-    padding: 5px 40px;
-}
-
 .brick-second {
     display: flex;
     justify-content: flex-end;
@@ -126,21 +113,6 @@
     text-align: right;
 }
 
-
-.brick-second__link {
-    background-color: rgba(91, 64, 64, 0.7);
-    padding: 5px 30px;
-}
-
-.brick-second__link a {
-    color: white;
-
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 25px;
-    letter-spacing: 1px;
-}
-
 .brick-third {
     text-align: center;
     width: 1331px;
@@ -158,7 +130,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+
     padding: 24px 0;
 
     color: white;
@@ -174,7 +146,7 @@
     gap: 16px;
 }
 
-.brick-third__text p { 
+.brick-third__text p {
     gap: 24px;
 
     max-width: 655px;
