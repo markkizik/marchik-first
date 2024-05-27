@@ -1,12 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-/* --components-- */
-@import url(./components/_header.css);
-@import url(./components/_home-support.css);
-@import url(./components/_brick.css);
-@import url(./components/_footer.css);
-@import url(./components/_root.css);
-@import url(./components/_buttons.css);
 
 * {
     margin: 0;
@@ -15,44 +8,81 @@
     box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
-
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     min-width: 100vw;
     min-height: 100vh;
 
-    background-color: rgba(242, 245, 247, 1);
+    background: #141514;
 
-    font-family: "Source Sans 3", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
-.container {
-    max-width: 1380px;
-    margin: 0 auto;
-
-    padding-left: 24px;
-    padding-right: 24px;
-
-    &.--relative {
-        position: relative;
-    }
-
-    &.--spacer2x {
-        padding-left: 48px;
-        padding-right: 48px;
-    }
-
-    &.--flex {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-.layout {
+.buttons {
+    position: relative;
+}
+
+.button {
+    position: relative;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 90px;
+
+    color: white;
+    fill: white;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+    background: #00B288;
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 1);
+
+    transition: transform .2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
+
+.button span {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    height: 100%;
+
+    font-weight: 300;
+    font-size: 1.2rem;
+
+    transition: transform .2s ease;
+}
+
+.button span:first-child  {
+    transform: translateX(-180px);
+}
+
+.button:hover span:first-child  {
+    transform: translateX(0);
+}
+
+.button .first {
+    transform: translateX(0);
+}
+
+.button:hover .first {
+    transform: translateX(180px);
+}
+
+
