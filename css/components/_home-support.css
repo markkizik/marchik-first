@@ -10,6 +10,8 @@
 }
 
 .home-support__card {
+    --caption-margin: 0 0 10px 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,14 +27,6 @@
     padding: 60px 40px;
 
     background-color: rgba(255, 255, 255, .7);
-
-    & h2 {
-        margin-bottom: 10px;
-        font-size: 20px;
-        font-weight: 700;
-        font-size: 26px;
-        text-transform: uppercase;
-    }
 
     & p {
         font-weight: 600;

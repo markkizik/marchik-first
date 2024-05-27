@@ -1,0 +1,9 @@
+.caption {
+    max-width: var(--captiom-max-width, auto);
+    margin: var(--caption-margin, 0);
+
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+}
