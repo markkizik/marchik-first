@@ -39,6 +39,10 @@ body {
     background-color: rgba(242, 245, 247, 1);
 
     font-family: "Source Sans 3", sans-serif;
+
+    @media (max-width: 768px) {
+        margin-right: 0;
+    }
 }
 
 .container {

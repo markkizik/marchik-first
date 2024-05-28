@@ -6,4 +6,9 @@
     line-height: 1.2;
     font-weight: 700;
     text-transform: uppercase;
+
+    @media (max-width: 700px) {
+        font-size: clamp(1rem, 4.938vw - 1.16rem, 2rem);
+        
+    }
 }
