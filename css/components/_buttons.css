@@ -4,7 +4,7 @@
     justify-content: center;
     gap: 12px;
 
-    padding: 8px 24px;
+    padding: var(--button-spacer-y, 8px) var(--button-spacer-x, 24px);
 
     font-size: 24px;
     line-height: 1.1;
@@ -49,6 +49,6 @@
     }
 
     @media (max-width: 700px) {
-        font-size: clamp(0.625rem, 2.174vw + 0.109rem, 1.5rem);
+        font-size: clamp(14px, 2.174vw + 0.109rem, 1.5rem);
     }
 }

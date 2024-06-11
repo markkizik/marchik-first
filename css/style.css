@@ -17,9 +17,20 @@
     box-sizing: border-box;
 }
 
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+
+    color: white;
+}
+
 a {
     text-decoration: none;
-    color: black;
+    color: currentColor;
 }
 
 p {
@@ -39,10 +50,6 @@ body {
     background-color: rgba(242, 245, 247, 1);
 
     font-family: "Source Sans 3", sans-serif;
-
-    @media (max-width: 768px) {
-        margin-right: 0;
-    }
 }
 
 .container {
@@ -58,8 +65,11 @@ body {
     }
 
     &.--spacer2x {
-        padding-left: 48px;
-        padding-right: 48px;
+
+        @media (min-width: 720px) {
+            padding-left: 48px;
+            padding-right: 48px;
+        }
     }
 
     &.--flex {

@@ -2,20 +2,69 @@
     --header-logo-size: 190px;
     --header-spacer: 16px;
 
-    position: relative;
+    position: sticky;
+    z-index: 100;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 1080px) {
+        .container {
+            flex-direction: row!important;
+            justify-content: space-between;
+        }
+
+        padding: 16px 0;
+        background-color: black;
+        
+
+        &:has(.header__btn-menu:focus-within) {
+            .header__downmenu {
+                display: inline-flex;
+                justify-content: center;
+
+                inset: 0 0 0 70%;
+
+                text-align: center;
+                animation: menu 1.5s ease-in-out;
+            }
+
+            .header__nav {
+                flex-direction: column;
+                transform: translate(-60%, 0);
+                gap: 24px;
+
+                animation: trantext 3s ease-in-out;
+            }
+
+            .nav__list .link {
+                font-size: clamp(0.625rem, 0.671vw + 0.195rem, 1rem);
+            }
+
+        }
+    }
+}
+
+@keyframes menu {
+   from {
+        inset: 0 0 0 100%;
+    }
+    to {
+        inset: 0 0 0 70%;
+    }
+}
+
+@keyframes trantext {
+    from {
+        transform: translate(-60%, -100%);
+    }
+    to {
+        transform: translate(-60%, 0);
+    }
 }
 
 .header__logo {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-    bottom: 0;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,6 +79,11 @@
         object-fit: contain;
         object-position: center;
     }
+
+    @media (min-width: 1080px) {
+        position: absolute;
+        inset: 0 auto 0 0;
+    }
 }
 
 .header__upmenu {
@@ -39,6 +93,10 @@
     gap: 80px;
 
     padding: 15px 0 10px calc(var(--header-logo-size) + var(--header-spacer));
+
+    @media (max-width: 1080px) {
+        display: none;
+    }
 }
 
 .header__upmenu a {
@@ -56,9 +114,33 @@
 
     padding-left: var(--header-logo-size) !important;
 
+
+    @media (max-width: 1080px) {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+
+        display: none;
+    }
 }
 
-.nav {
+.header__btn-menu {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+
+    border: 2px solid white;
+
+    @media (min-width: 1080px) {
+        display: none;
+    }
+}
+
+.header__nav {
     display: inline-flex;
     list-style: none;
 }
