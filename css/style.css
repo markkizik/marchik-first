@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-@import url('./component/_buy-component.css');
-@import url('./component/_select-term.css');
-@import url('./component/_header.css');
-@import url('./component/_dialog.css');
-@import url('./fonts.css');
-
 * {
     margin: 0;
     padding: 0;
@@ -36,32 +30,70 @@ body {
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(23, 15, 15);
+    min-height: 100vh;
 }
 
 .container {
     position: relative;
-    min-width: 1440px;
     margin: 0 auto;
     padding: 0 24px;
+}
 
-    @media (max-width: 1440px) {
-        min-width: 1200px;
-    }
+.content__list {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    gap: 10px;
 
-    @media (max-width: 1200px) {
-        min-width: 920px;
-    }
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
 
-    @media (max-width: 920px) {
-        min-width: 780px;
-    }
-
-    @media (max-width: 780px) {
-        min-width: 620px;
-    }
+.content__item {
+    display: inline-flex;
     
-    @media (max-width: 620px) {
-        min-width: 420px;
+    & img {
+        width: 120px;
     }
+}
+
+.content__list .content__item {
+    transition: .5s;
+    filter: brightness(0);
+}
+
+.content__list .content__item:hover {
+    filter: brightness(1);
+    transform: translateZ(200px);
+}
+
+.content__list .content__item:hover + * {
+    filter: brightness(0.5);
+    transform: translateZ(150px) rotateY(40deg);
+}
+
+.content__list .content__item:hover + * + *{
+    filter: brightness(0.3);
+    transform: translateZ(70px) rotateY(20deg);
+}
+
+.content__list .content__item:hover + * + * + *{
+    filter: brightness(0.1);
+    transform: translateZ(30px) rotateY(10deg);
+}
+
+.content__list .content__item:has(+ *:hover) {
+    filter: brightness(0.5);
+    transform: translateZ(150px) rotateY(-40deg);
+}
+
+.content__list .content__item:has(+ * + *:hover) {
+    filter: brightness(0.3);
+    transform: translateZ(70px) rotateY(-20deg);
+}
+
+.content__list .content__item:has(+ * + * + *:hover) {
+    filter: brightness(0.1);
+    transform: translateZ(30px) rotateY(-10deg);
 }
