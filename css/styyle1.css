@@ -48,7 +48,7 @@ body {
     gap: 20px;
 
     &.--start {
-        --car-pos: auto calc(100% - 60px);
+        --car-pos: 0;
     }
 }
 
@@ -61,6 +61,22 @@ body {
     display: flex;
     flex-flow: column;
     min-width: 100%;
+
+    &:nth-child(2) {
+        --car-pos-tr-funtcion: ease;
+    }
+
+    &:nth-child(3) {
+        --car-pos-tr-funtcion: ease-in;
+    }
+
+    &:nth-child(4) {
+        --car-pos-tr-funtcion: ease-out;
+    }
+
+    &:nth-child(5) {
+        --car-pos-tr-funtcion: cubic-bezier(1, 0, 0, 0);
+    }
 }
 
 .timing__card-top {
@@ -78,9 +94,11 @@ body {
 }
 
 .car {
+    --car-pos-width: 60px;
     position: absolute;
-    inset: var(--car-pos, auto calc(100% - 60px 0));
-    width: 60px;
+    right: var(--car-pos, calc(100% - var(--car-pos-width)));
+    width: var(--car-pos-width);
+    transition: right 1s var(--car-pos-tr-funtcion, linear);
 }
 
 .timing-start {
