@@ -77,6 +77,18 @@ body {
     &:nth-child(5) {
         --car-pos-tr-funtcion: cubic-bezier(1, 0, 0, 0);
     }
+
+    &:nth-child(6) {
+        --car-pos-tr-funtcion: cubic-bezier(.13,.87,.65,.08);
+    }
+
+    &:nth-child(7) {
+        --car-pos-tr-funtcion: cubic-bezier(1,-0.01,0,.99);
+    }
+
+    &:nth-child(8) {
+        --car-pos-tr-funtcion: cubic-bezier(.98,.77,.04,.31);
+    }
 }
 
 .timing__card-top {
