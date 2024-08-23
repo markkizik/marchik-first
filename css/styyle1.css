@@ -110,7 +110,7 @@ body {
     position: absolute;
     right: var(--car-pos, calc(100% - var(--car-pos-width)));
     width: var(--car-pos-width);
-    transition: right 1s var(--car-pos-tr-funtcion, linear);
+    transition: right var(--car-pos-tr-duration, 1s) var(--car-pos-tr-funtcion, linear);
 }
 
 .timing-start {
