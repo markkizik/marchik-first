@@ -4,7 +4,7 @@
 
 <head>
 
-    <title>AutoDesk Revit</title>
+    <title>Box Generator</title>
     <link rel="stylesheet" href="css/style.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,20 +15,48 @@
 
     <div class="container">
 
-        <div class="content__list">
-            <div class="content__item"><img src="./image/1.jpg" alt=""></div>
-            <div class="content__item"><img src="./image/2.jpg" alt=""></div>
-            <div class="content__item"><img src="./image/3.jpg" alt=""></div>
-            <div class="content__item"><img src="./image/4.jpg" alt=""></div>
-            <div class="content__item"><img src="./image/5.jpg" alt=""></div>
-            <div class="content__item"><img src="./image/1.jpg" alt=""></div>
-            <div class="content__item"><img src="./image/2.jpg" alt=""></div>
-            <div class="content__item"><img src="./image/3.jpg" alt=""></div>
-            <div class="content__item"><img src="./image/4.jpg" alt=""></div>
-            <div class="content__item"><img src="./image/5.jpg" alt=""></div>
+        <div class="box-generator">
+            <div class="box-generator__first">
+                <div class="box-generator__horizontal">
+                    <p class="box-generator__title">Horizontal offset</p>
+                    <input class="input-horizontal" id="range" type="range" min="-50" value="8" max="50">
+                    <label class="label-horizontal" for="input-horizontal"></label>
+                </div>
+                <div class="box-generator__vertical">
+                    <p class="box-generator__title">Vertical</p>
+                    <input class="input-vertical" id="range" type="range" min="-50" value="8" max="50">
+                    <label class="label-vertical" for="input-vertical"></label>
+                </div>
+                <div class="box-generator__blur">
+                    <p class="box-generator__title">Blur</p>
+                    <input class="input-blur" id="range" type="range" min="0" value="24" max="50">
+                    <label class="label-blur" for="input-blur"></label>
+                </div>
+                <div class="box-generator__spread">
+                    <p class="box-generator__title">Spread</p>
+                    <input class="input-spread" id="range" type="range" min="-50" value="0" max="50">
+                    <label class="label-spread" for="input-spread"></label>
+                </div>
+                <div class="box-generator__inset">
+                    <input id="input-inset" type="checkbox">
+                    <p>inset</p>
+                    <input id="input-color" type="color">
+                    <p>color</p>
+                </div>
+            </div>
+            <div class="box-generator__second">
+                <div class="box-generaror__elm" style="box-shadow: 0px 0px 0px 0px black; 
+                width: 200px;"></div>
+                <div class="box-generato__width"">
+                    <p class=" box-generator__title">Width</p>
+                    <input class="input-width" id="range" type="range" min="100" value="200" max="300">
+                    <label class="label-width" for="range"></label>
+                </div>
+            </div>
         </div>
-
     </div>
+
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
