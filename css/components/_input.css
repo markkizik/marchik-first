@@ -3,7 +3,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 250px;
+    width: 95%;
     height: 18px;
     border: none;
     border-radius: 4px;
@@ -48,7 +48,7 @@
 }
 
 label {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 16px;
     font-weight: 700;
+    transform: translate(-100px, 1349px);
 }
