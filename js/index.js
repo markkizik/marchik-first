@@ -1,6 +1,7 @@
 const block = document.querySelector('.box-generaror__elm');
 const blockSecond = document.querySelector('.box-generator__first')
 
+const allInput = document.querySelectorAll('input');
 const allInputFirst = document.querySelectorAll('.box-generator__first input');
 const allInputSecond = document.querySelectorAll('.box-generator__first .box-generato__width input')
 
@@ -22,7 +23,6 @@ const width = document.querySelector('.input-width')
 const inputChange = () => {
     block.style.boxShadow= `${inset.checked ? 'inset' : ""} ${horizontal.value}px ${vertical.value}px ${blurInput.value}px ${spread.value}px ${color.value}`;
 
-    horizontalNum.value = horizontal.value;
     verticalNum.value = vertical.value;
     blurInputNum.value = blurInput.value;
     spreadNum.value = spread.value;
@@ -33,14 +33,27 @@ const widthChange = () => {
     widthNum.value = width.value;
 };
 
-allInputFirst.forEach(element => {
-    element.addEventListener('change', function () {
-        inputChange();
-    });
-});
+// allInputFirst.forEach(element => {
+//     element.addEventListener('change', function () {
+//         inputChange();
+//     });
+// });
 
-allInputSecond.forEach(element => {
+
+// allInputSecond.forEach(element => {
+//     element.addEventListener('change', function () {
+//         widthChange();
+//     });
+// });
+
+allInput.forEach(element => {
     element.addEventListener('change', function () {
-        widthChange();
+        inputChange()
+        widthChange()
+        if(element.type === 'range') {
+            updateValueInputNotRange(horizontalNum, horizontal.value)
+        } else {
+            updateValueInputNotRange(horizontal.value, horizontalNum)
+        }
     });
 });
