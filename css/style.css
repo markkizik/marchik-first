@@ -97,3 +97,56 @@ input[type=number] {
     padding: 5px;
     width: 56px;
 }
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.card-code {
+    display: flex;
+    flex-flow: column;
+    width: 980px;
+    padding: 48px;
+    border-radius: 12px;
+    background-color: white;
+}
+
+.card-code__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.copy-button {
+    display: inline-flex;
+
+    padding: 4px 12px;
+    margin-bottom: 16px;
+
+    font-size: 14px;
+    color: #fff;
+
+    border-radius: 4px;
+    background-color: #5983fc;
+    cursor: pointer;
+
+    transition: all .2s ease-out;
+
+    &:hover {
+        filter: brightness(0.75);
+    }
+}
+
+.card-code__codes {
+    padding: 20px;
+
+    font-size: 16px;
+    color: #fff;
+
+    border-radius: 12px;
+    background-color: #1f2024;
+    overflow-x: hidden;
+}

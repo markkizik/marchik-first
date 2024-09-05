@@ -21,8 +21,9 @@ const widthNum = document.querySelector('.number-width');
 const width = document.querySelector('.input-width')
 
 const inputChange = () => {
-    block.style.boxShadow= `${inset.checked ? 'inset' : ""} ${horizontal.value}px ${vertical.value}px ${blurInput.value}px ${spread.value}px ${color.value}`;
+    block.style.boxShadow = `${inset.checked ? 'inset' : ""} ${horizontal.value}px ${vertical.value}px ${blurInput.value}px ${spread.value}px ${color.value}`;
 
+    horizontalNum.value = horizontal.value;
     verticalNum.value = vertical.value;
     blurInputNum.value = blurInput.value;
     spreadNum.value = spread.value;
@@ -33,27 +34,38 @@ const widthChange = () => {
     widthNum.value = width.value;
 };
 
-// allInputFirst.forEach(element => {
-//     element.addEventListener('change', function () {
-//         inputChange();
-//     });
-// });
+const codes = document.querySelector('.card-code__codes');
+const readyCode = () => {
+    codes.innerHTML = `box-shadow: ${inset.checked ? 'inset' : ""} ${horizontal.value}px ${vertical.value}px ${blurInput.value}px ${spread.value}px;`;
+};
 
+const copyBtn = document.querySelector('.copy-button');
+function copyText() {
+    navigator.clipboard.writeText(`box-shadow: ${inset.checked ? 'inset' : ""} ${horizontal.value}px ${vertical.value}px ${blurInput.value}px ${spread.value}px;`);
+};
 
-// allInputSecond.forEach(element => {
-//     element.addEventListener('change', function () {
-//         widthChange();
-//     });
-// });
+console.log(readyCode);
 
-allInput.forEach(element => {
+allInputFirst.forEach(element => {
     element.addEventListener('change', function () {
-        inputChange()
-        widthChange()
-        if(element.type === 'range') {
-            updateValueInputNotRange(horizontalNum, horizontal.value)
-        } else {
-            updateValueInputNotRange(horizontal.value, horizontalNum)
-        }
+        inputChange();
+        readyCode();
     });
 });
+
+allInputSecond.forEach(element => {
+    element.addEventListener('change', function () {
+        widthChange();
+    });
+});
+
+// allInput.forEach(element => {
+//     element.addEventListener('change', function () {
+//         inputChange()
+//         if(element.type === 'range') {
+//             updateValueInputNotRange(horizontalNum, horizontal.value)
+//         } else {
+//             updateValueInputNotRange(horizontal.value, horizontalNum)
+//         }
+//     });
+// });
