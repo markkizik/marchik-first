@@ -18,10 +18,13 @@ const blurInputNum = document.querySelector('.number-blur');
 const spreadNum = document.querySelector('.number-spread');
 const widthNum = document.querySelector('.number-width');
 
-const width = document.querySelector('.input-width')
+const width = document.querySelector('.input-width');
+
+let bxs;
 
 const inputChange = () => {
-    block.style.boxShadow = `${inset.checked ? 'inset' : ""} ${horizontal.value}px ${vertical.value}px ${blurInput.value}px ${spread.value}px ${color.value}`;
+    bxs =`${inset.checked ? 'inset' : ""} ${horizontal.value}px ${vertical.value}px ${blurInput.value}px ${spread.value}px ${color.value}`
+    block.style.boxShadow = bxs;
 
     horizontalNum.value = horizontal.value;
     verticalNum.value = vertical.value;
@@ -36,36 +39,47 @@ const widthChange = () => {
 
 const codes = document.querySelector('.card-code__codes');
 const readyCode = () => {
-    codes.innerHTML = `box-shadow: ${inset.checked ? 'inset' : ""} ${horizontal.value}px ${vertical.value}px ${blurInput.value}px ${spread.value}px;`;
+    codes.textContent = `box-shadow: ${bxs}`;
 };
 
-const copyBtn = document.querySelector('.copy-button');
 function copyText() {
-    navigator.clipboard.writeText(`box-shadow: ${inset.checked ? 'inset' : ""} ${horizontal.value}px ${vertical.value}px ${blurInput.value}px ${spread.value}px;`);
+    navigator.clipboard.writeText(`box-shadow: ${bxs}`);
+    alert('Текст скопирован.');
 };
 
-console.log(readyCode);
+// allInputFirst.forEach(element => {
+//     element.addEventListener('change', function () {
+//         inputChange();
+//         readyCode();
+//     });
+// });
 
-allInputFirst.forEach(element => {
+// allInputSecond.forEach(element => {
+//     element.addEventListener('change', function () {
+//         widthChange();
+//     });
+// });
+
+const setInputValue = (elm, value) => {
+    elm.value = value
+};
+
+allInput.forEach(element => {
     element.addEventListener('change', function () {
-        inputChange();
         readyCode();
-    });
-});
+        const nearElement = element.type != 'range' ? element.nextElementSibling : element.previousElementSibling;
 
-allInputSecond.forEach(element => {
-    element.addEventListener('change', function () {
+        // if (element.type != 'range') {
+        //     setInputValue(element.nextElementSibling, element.value)
+        // } else {
+        //     setInputValue(element.previousElementSibling, element.value)
+        // }
+        
+        setInputValue(nearElement, element.value);
+
+        inputChange();
         widthChange();
     });
 });
 
-// allInput.forEach(element => {
-//     element.addEventListener('change', function () {
-//         inputChange()
-//         if(element.type === 'range') {
-//             updateValueInputNotRange(horizontalNum, horizontal.value)
-//         } else {
-//             updateValueInputNotRange(horizontal.value, horizontalNum)
-//         }
-//     });
-// });
+console.log(readyCode)
