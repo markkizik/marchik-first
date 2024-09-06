@@ -20,16 +20,9 @@ const widthNum = document.querySelector('.number-width');
 
 const width = document.querySelector('.input-width');
 
-let bxs;
 
 const inputChange = () => {
-    bxs =`${inset.checked ? 'inset' : ""} ${horizontal.value}px ${vertical.value}px ${blurInput.value}px ${spread.value}px ${color.value}`
-    block.style.boxShadow = bxs;
-
-    horizontalNum.value = horizontal.value;
-    verticalNum.value = vertical.value;
-    blurInputNum.value = blurInput.value;
-    spreadNum.value = spread.value;
+    block.style.boxShadow = `${inset.checked ? 'inset' : ""} ${horizontal.value}px ${vertical.value}px ${blurInput.value}px ${spread.value}px ${color.value}`;
 };
 
 const widthChange = () => {
@@ -39,11 +32,11 @@ const widthChange = () => {
 
 const codes = document.querySelector('.card-code__codes');
 const readyCode = () => {
-    codes.textContent = `box-shadow: ${bxs}`;
+    codes.innerHTML = `box-shadow: ${inset.checked ? 'inset' : ""} ${horizontal.value}px ${vertical.value}px ${blurInput.value}px ${spread.value}px ${color.value}`;
 };
 
 function copyText() {
-    navigator.clipboard.writeText(`box-shadow: ${bxs}`);
+    navigator.clipboard.writeText(`box-shadow: ${inset.checked ? 'inset' : ""} ${horizontal.value}px ${vertical.value}px ${blurInput.value}px ${spread.value}px ${color.value}`);
     alert('Текст скопирован.');
 };
 
@@ -65,20 +58,18 @@ const setInputValue = (elm, value) => {
 };
 
 allInput.forEach(element => {
-    element.addEventListener('change', function () {
+    element.addEventListener('input', function () {
         readyCode();
         const nearElement = element.type != 'range' ? element.nextElementSibling : element.previousElementSibling;
-
         // if (element.type != 'range') {
         //     setInputValue(element.nextElementSibling, element.value)
         // } else {
         //     setInputValue(element.previousElementSibling, element.value)
         // }
-        
         setInputValue(nearElement, element.value);
 
-        inputChange();
         widthChange();
+        inputChange();
     });
 });
 

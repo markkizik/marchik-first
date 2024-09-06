@@ -101,13 +101,14 @@ input[type=number] {
 .row {
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+    padding: 0 48px;
 }
 
 .card-code {
     display: flex;
     flex-flow: column;
-    width: 980px;
+    min-width: 100%;
     padding: 48px;
     border-radius: 12px;
     background-color: white;
