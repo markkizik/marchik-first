@@ -50,21 +50,24 @@ const setInputValue = (elm, value) => {
 allInput.forEach(element => {
     element.addEventListener('input', function () {
         const nearElement = element.type != 'range' ? element.nextElementSibling : element.previousElementSibling;
+        
+        const isCheckMin = parseInt(element.value) < parseInt(element.min);
+        const isCheckMax = parseInt(element.value) > parseInt(element.max);
+        const isCheckWidth = !element.classList.contains('number-width');
+
         setInputValue(nearElement, element.value);
 
-        if (parseInt(element.value) < parseInt(element.min)) {
+        if (isCheckMin && isCheckWidth) {
             element.value = element.min;
         }
 
-        if (parseInt(element.value) > parseInt(element.max)) {
+        if (isCheckMax) {
             element.value = element.max;
         }
 
-        setTimeout(
-            () => {
-                widthChange();
-                shadowUpdate();
-            }, 300
-        );
+        widthChange();
+        shadowUpdate();
     });
+
+    element.addEventListener('change', () => (!element.value) && (element.value = element.getAttribute('value')));
 });
