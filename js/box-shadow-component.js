@@ -7,6 +7,20 @@ export const boxShadowComponent = () => {
     const block = getElement('.box-generaror__elm');
     let boxShadow;
 
+    const hexToRgba = (hex) => {
+        // Удаление решетки, если есть
+        hex = hex.replace(/^#/, '');
+
+        let alpha = getElement('.input-opacity').value;
+
+        // Преобразование в целые числа
+        const r = parseInt(hex.substring(0, 2), 16);
+        const g = parseInt(hex.substring(2, 4), 16);
+        const b = parseInt(hex.substring(4, 6), 16);
+
+        return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    }
+
     const shadowUpdate = () => {
         const codes = getElement('.card-code__codes');
         const horizontal = getElement('.input-horizontal');
@@ -15,7 +29,11 @@ export const boxShadowComponent = () => {
         const spread = getElement('.input-spread');
         const inset = getElement('#input-inset');
         const color = getElement('#input-color');
-        const shadow = `${inset.checked ? 'inset' : ""} ${horizontal.value}px ${vertical.value}px ${blurInput.value}px ${spread.value}px ${color.value}`;
+
+        const hex = color.value;
+        const rgba = hexToRgba(hex);
+
+        const shadow = `${inset.checked ? 'inset' : ""} ${horizontal.value}px ${vertical.value}px ${blurInput.value}px ${spread.value}px ${rgba}`;
 
         block.style.boxShadow = shadow;
         boxShadow = `box-shadow: ${shadow}`;
