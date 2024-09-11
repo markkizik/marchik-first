@@ -7,7 +7,7 @@
     border-radius: var(--width-circle);
 }
 
-#input-inset {
+.checkbox input {
     position: absolute;
     inset: 0;
     z-index: 1;
@@ -15,7 +15,7 @@
     cursor: pointer;
 }
 
-.label-checkbox {
+.checkbox__label {
     position: absolute;
     inset: var(--inset-circle, 0);
     width: var(--width-circle);
