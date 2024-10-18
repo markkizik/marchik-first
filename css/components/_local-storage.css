@@ -1,0 +1,83 @@
+.local-storage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+
+    gap: 16px;
+
+    color: white;
+
+    & label {
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    & input {
+        padding: 4px 20px;
+        border-radius: 6px;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.text {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    animation: animTextHidden 0.4s ease-in-out;
+
+    &.--content {
+        animation: animText 0.4s ease-in-out;
+        height: 200px;
+    }
+}
+
+@keyframes animText {
+    from {
+        height: 0;
+    } to {
+        height: 200px;
+    }
+}
+
+@keyframes animTextHidden {
+    from {
+        height: 200px;
+    } to {
+        height: 0;
+    }
+}
+
+.local-storage__btn {
+    display: flex;
+    gap: 24px;
+}
+
+.add-stor, .add-all {
+    margin-top: 2rem;
+    padding: 5px 20px;
+    background-color: #6E44FF;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: scale 0.2s linear;
+
+    &:hover {
+        scale: 1.1;
+    }
+}
+
+.clear-store {
+    padding: 4px 20px;
+    border-radius: 10px;
+    background-color: #00AEEF;
+    cursor: pointer;
+    transition: scale 0.2s linear;
+
+    &:hover {
+        scale: 1.15;
+    }
+}

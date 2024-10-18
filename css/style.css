@@ -1,22 +1,8 @@
 /* core */
 @import url('./core/_base.css');
 @import url('./core/_fonts.css');
-@import url('./core/_icons.css');
-@import url('./core/_root.css');
+
 
 /* components */
-@import url('./component/_buy-component.css');
-@import url('./component/_resources.css');
-@import url('./component/_select-term.css');
-@import url('./component/_header.css');
-@import url('./component/_footer.css');
-@import url('./component/_tooltipe.css');
-@import url('./component/_dialog.css');
-@import url('./component/_faq.css');
-@import url('./component/_collection.css');
-@import url('./component/_products.css');
-@import url('./component/_ar-imagine.css');
-@import url('./component/_autodesk.css');
-@import url('./component/_au-assi.css');
-@import url('./component/_autodesk-widget.css');
-@import url('./component/_video-1.css');
+@import url('./components/_donate-plans.css');
+@import url('./components/_local-storage.css');
