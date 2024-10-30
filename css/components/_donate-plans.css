@@ -42,7 +42,7 @@
     @media (max-width: 990px) {
         flex-flow: column;
         gap: 3rem;
-     }
+    }
 }
 
 .donate-plan-contents__items {
@@ -178,11 +178,16 @@
         align-items: center;
         gap: 5px;
 
-        & svg {
+        & .tick {
+            display: flex;
+            flex-flow: column;
+            gap: 5px;
+
+            height: 20px;
             width: 20px;
             stroke: #8843E8;
         }
-    } 
+    }
 }
 
 .checkbox-thems {
